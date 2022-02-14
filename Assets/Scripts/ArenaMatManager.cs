@@ -14,8 +14,9 @@ public class ArenaMatManager : MonoBehaviour
     public void SetColor(Material wall, Material ground)
     {
 
-
-        meshRenderer.materials[0] = wall;
-        meshRenderer.materials[1] = ground;
+        Material[] mats = meshRenderer.materials;
+        mats[0] = ground;
+        mats[1] = wall;
+        meshRenderer.materials = mats;
     }
 }
