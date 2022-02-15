@@ -9,12 +9,14 @@ public class Bullet : MonoBehaviour
     string bulletColor;
     Rigidbody rb;
     public float force;
-    Vector3 lastVelocity;
+    public int rotationSpeed;
 
     public Material white;
     public Material black;
 
-   
+    public MeshRenderer meshRenderer;
+    public GameObject bulletToRotate;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,9 +28,8 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        lastVelocity = rb.velocity;
+        bulletToRotate.transform.Rotate(new Vector3(rotationSpeed, 0, 0));
 
-        
     }
 
     public void SetBullet(string color)
@@ -37,12 +38,12 @@ public class Bullet : MonoBehaviour
         switch (color)
         {
             case "black":
-                gameObject.GetComponent<MeshRenderer>().material = black;
+                meshRenderer.material = black;
                 gameObject.layer = LayerMask.NameToLayer("Black");
                 bulletColor = "black";
                 break;
             case "white":
-                gameObject.GetComponent<MeshRenderer>().material = white;
+                meshRenderer.material = white;
                 gameObject.layer = LayerMask.NameToLayer("White");
                 bulletColor = "white";
                 break;

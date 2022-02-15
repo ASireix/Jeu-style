@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 6070210924173763618}
-  speed: 3.05
+  speed: 5
   turnSpeed: 0.06
 --- !u!114 &6070210924173763619
 MonoBehaviour:
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a569a517ba89da04f8ec7b9944521d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8606444047275002990, guid: e23ac843ef9d53742b5504f933e6ed17, type: 3}
+  bullet: {fileID: 1205902370950162045, guid: 96cbd9ea268454a40baf35dad2a4df8e, type: 3}
   shootPosition: {fileID: 6070210925468656836}
   color: white
   areoOfGraze: {fileID: 7337931462034392968}

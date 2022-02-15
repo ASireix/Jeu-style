@@ -114,11 +114,11 @@ public class GameManager : MonoBehaviour
             StickBlack.GetComponent<Outline>().OutlineColor = Color.white;
             StickWhite.GetComponent<Outline>().OutlineColor = Color.black;
 
-            StickBlack.GetComponent<MeshRenderer>().material = BlackMat;
-            StickWhite.GetComponent<MeshRenderer>().material = WhiteMat;
+            StickBlack.GetComponent<PlayerController>().mesh.material = BlackMat;
+            StickWhite.GetComponent<PlayerController>().mesh.material = WhiteMat;
 
-            StickBlack.GetComponent<PlayerAttacks>().color = "black";
-            StickWhite.GetComponent<PlayerAttacks>().color = "white";
+            StickBlack.GetComponent<PlayerController>().color = "black";
+            StickWhite.GetComponent<PlayerController>().color = "white";
 
             StickBlack.layer = LayerMask.NameToLayer("Black");
             StickWhite.layer = LayerMask.NameToLayer("White");
