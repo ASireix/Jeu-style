@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu]
 public class AbilityManager : ScriptableObject
 {
-    public int maxEnergy = 100;
+    public float maxEnergy = 100;
 
-    public int energy = 100;
+    public float energy = 100;
 
-    public UnityEvent<string,int> energyChangeEvent;
+    public UnityEvent<string,float> energyChangeEvent;
+
+    public float regenSpeed;
+    public float currentRegenSpeed;
+
+    public int penalityDuration;
 
 
     private void OnEnable()
@@ -18,14 +24,28 @@ public class AbilityManager : ScriptableObject
         energy = maxEnergy;
         if (energyChangeEvent == null)
         {
-            energyChangeEvent = new UnityEvent<string,int>();
+            energyChangeEvent = new UnityEvent<string,float>();
         }
+
+        currentRegenSpeed = regenSpeed;
     }
 
-    public void DecreaseEnergy(string col, int amount)
+    public async void DecreaseEnergy(string col, int amount)
     {
         energy -= amount;
-        energyChangeEvent.Invoke(col,energy);
+        energyChangeEvent.Invoke(col,(float)energy/maxEnergy);
+
+        currentRegenSpeed = 0;
+        await Task.Delay(penalityDuration*1000);
+        currentRegenSpeed = regenSpeed;
     }
+
+    public void IncreaseEnergy(string col, float amount)
+    {
+        energy += amount;
+        energyChangeEvent.Invoke(col, (float)energy / maxEnergy);
+    }
+
     
+
 }

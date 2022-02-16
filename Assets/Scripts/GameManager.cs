@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     GameObject StickWhite;
     GameObject StickBlack;
+    public AbilityManager PlayerOneAbilityManager;
+    public AbilityManager PlayerTwoAbilityManager;
 
     [Header("Materials")]
     public Material WhiteMat;
@@ -112,19 +114,23 @@ public class GameManager : MonoBehaviour
     {
         if (StickBlack && StickWhite)
         {
+            PlayerController blackController = StickBlack.GetComponent<PlayerController>();
+            PlayerController whiteController = StickWhite.GetComponent<PlayerController>();
+
             StickBlack.GetComponent<Outline>().OutlineColor = Color.white;
             StickWhite.GetComponent<Outline>().OutlineColor = Color.black;
 
-            StickBlack.GetComponent<PlayerController>().mesh.material = BlackMat;
-            StickWhite.GetComponent<PlayerController>().mesh.material = WhiteMat;
+            blackController.mesh.material = BlackMat;
+            whiteController.mesh.material = WhiteMat;
 
-            StickBlack.GetComponent<PlayerController>().color = "black";
-            StickWhite.GetComponent<PlayerController>().color = "white";
+            blackController.color = "black";
+            whiteController.color = "white";
 
             StickBlack.layer = LayerMask.NameToLayer("Black");
             StickWhite.layer = LayerMask.NameToLayer("White");
 
-            
+            blackController.abilityManager = PlayerTwoAbilityManager;
+            whiteController.abilityManager = PlayerOneAbilityManager;
 
             hasStarted = true;
         }

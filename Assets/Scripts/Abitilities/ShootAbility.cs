@@ -10,7 +10,7 @@ public class ShootAbility : Ability
 
     public override void Activate(PlayerController player)
     {
-        if (!player.anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
+        if (!player.anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot") && requiredEnergy<=player.abilityManager.energy)
         {
             
             player.anim.SetTrigger("Shoot");

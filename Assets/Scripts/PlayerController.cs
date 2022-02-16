@@ -12,13 +12,19 @@ public class PlayerController : MonoBehaviour
 
     public Transform shootingPos;
 
-    public float maxEnergy;
-    float energy;
-
     public delegate void TestDelegate(PlayerController playerController); // This defines what type of method you're going to call.
     public TestDelegate AnimationFunctionToCall;
 
     public AbilityManager abilityManager;
+
+    private void Update()
+    {
+        if (abilityManager.energy < abilityManager.maxEnergy)
+        {
+            abilityManager.IncreaseEnergy(color, abilityManager.currentRegenSpeed * Time.deltaTime);
+        }
+        
+    }
 
     public void TriggerAnimFunction()
     {
@@ -27,8 +33,5 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void DecreaseEnergy(float amount)
-    {
-        energy -= amount;
-    }
+    
 }

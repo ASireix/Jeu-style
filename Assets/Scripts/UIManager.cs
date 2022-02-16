@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     // scriptable object
-    public AbilityManager abilityManager;
+    public AbilityManager abilitiesPOne;
+    public AbilityManager abilitiesPTwo;
 
     public Image clock;
 
@@ -22,10 +23,22 @@ public class UIManager : MonoBehaviour
 
     private void OnEnable()
     {
-        abilityManager.energyChangeEvent.AddListener(UpdateEnergy);
+        abilitiesPOne.energyChangeEvent.AddListener(UpdateEnergy);
+        abilitiesPTwo.energyChangeEvent.AddListener(UpdateEnergy);
     }
-    void UpdateEnergy(string coloeur, int amount)
+    void UpdateEnergy(string coloeur, float amount)
     {
-
+        switch (coloeur)
+        {
+            case "white":
+                EnergyBarWhite.fillAmount = amount;
+                break;
+            case "black":
+                EnergyBarBlack.fillAmount = amount;
+                break;
+            default:
+                break;
+        }
+        
     }
 }

@@ -94,10 +94,18 @@ public class Bullet : MonoBehaviour
 
         currentBlinkTime = blinkTime;
 
-        if (collision.gameObject.tag == "Player")
+        string leTag = collision.gameObject.tag;
+
+        if (leTag == "Player")
         {
             Destroy(collision.gameObject);
-        }/*
+        }
+        else if (leTag == "Bullet")
+        {
+            Destroy(collision.gameObject);
+            Destroy(this);
+        }
+            /*
         else
         {
             var speed = lastVelocity.magnitude;
