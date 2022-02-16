@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8031916600411285445}
   m_Layer: 0
   m_Name: MagicBullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,10 +79,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 500
   rotationSpeed: 10
+  outline: {fileID: 8031916600411285445}
   white: {fileID: 2100000, guid: 1cb44ef20901fe74d94458de2d2bb2f2, type: 2}
   black: {fileID: 2100000, guid: 5aef7ef4573c9154ea0c63fe12298e5d, type: 2}
   meshRenderer: {fileID: 8441856330931730676}
   bulletToRotate: {fileID: 7937457914086611233}
+  currentBlinkTime: 0
+  blinkTime: 0.26
 --- !u!114 &8031916600411285445
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -87,7 +88,7 @@ public class GameManager : MonoBehaviour
             victoryText.text = "Le banc gagne";
         }
 
-        timerText.text = (int)timeRemainingUntilChange+"";
+        
     }
 
     public void OnPlayerJoined(PlayerInput playerInput) { 
@@ -123,10 +124,14 @@ public class GameManager : MonoBehaviour
             StickBlack.layer = LayerMask.NameToLayer("Black");
             StickWhite.layer = LayerMask.NameToLayer("White");
 
-            StickBlack.GetComponent<PlayerAttacks>().cDHelper = blackCD;
-            StickWhite.GetComponent<PlayerAttacks>().cDHelper = whiteCD;
+            
 
             hasStarted = true;
         }
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

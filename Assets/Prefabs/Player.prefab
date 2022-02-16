@@ -1507,7 +1507,7 @@ GameObject:
   - component: {fileID: 8191169357112126951}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1616,6 +1616,7 @@ MonoBehaviour:
   anim: {fileID: 1482233035093811623}
   shootingPos: {fileID: 3758693010130458775}
   maxEnergy: 0
+  abilityManager: {fileID: 11400000, guid: 7e9cc9942cab62547afe5c0e16b8622d, type: 2}
 --- !u!114 &1482233035093811619
 MonoBehaviour:
   m_ObjectHideFlags: 0

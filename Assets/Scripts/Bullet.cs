@@ -11,16 +11,22 @@ public class Bullet : MonoBehaviour
     public float force;
     public int rotationSpeed;
 
+    public Outline outline;
+
     public Material white;
     public Material black;
 
     public MeshRenderer meshRenderer;
     public GameObject bulletToRotate;
 
+    [SerializeField]
+    float currentBlinkTime;
+    public float blinkTime;
 
     // Start is called before the first frame update
     void Start()
     {
+        currentBlinkTime = blinkTime;
         rb = gameObject.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * force);
     }
@@ -30,6 +36,16 @@ public class Bullet : MonoBehaviour
     {
         bulletToRotate.transform.Rotate(new Vector3(rotationSpeed, 0, 0));
 
+        if (currentBlinkTime > 0)
+        {
+            currentBlinkTime -= Time.deltaTime;
+            outline.enabled = true;
+        }
+        else
+        {
+            outline.enabled = false;
+        }
+        
     }
 
     public void SetBullet(string color)
@@ -41,15 +57,22 @@ public class Bullet : MonoBehaviour
                 meshRenderer.material = black;
                 gameObject.layer = LayerMask.NameToLayer("Black");
                 bulletColor = "black";
+                outline.OutlineColor = Color.white;
                 break;
             case "white":
                 meshRenderer.material = white;
                 gameObject.layer = LayerMask.NameToLayer("White");
                 bulletColor = "white";
+                outline.OutlineColor = Color.black;
                 break;
             default:
                 break;
         }
+    }
+
+    public void BlinkOutline()
+    {
+        currentBlinkTime = blinkTime;
     }
 
     public void Switch()
@@ -68,6 +91,8 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         transform.rotation = Quaternion.LookRotation(rb.velocity, transform.up);
+
+        currentBlinkTime = blinkTime;
 
         if (collision.gameObject.tag == "Player")
         {

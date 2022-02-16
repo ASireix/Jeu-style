@@ -36,6 +36,22 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 movement = new Vector3(directionVector.x, 0, directionVector.y).normalized;
 
+        if (transform.position != lastPos)
+        {
+            player.anim.SetBool("isWalking", true);
+        }
+        else
+        {
+            player.anim.SetBool("isWalking", false);
+        }
+
+        lastPos = transform.position;
+
+        if (player.anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
+        {
+            return;
+        }
+
         movement = Quaternion.Euler(0, cam.transform.eulerAngles.y, 0) * movement;
         //transform.rotation = Quaternion.Euler(0f, cam.transform.eulerAngles.y, 0f);
         characterController.Move(movement * speed * Time.deltaTime);
@@ -47,16 +63,7 @@ public class PlayerMovement : MonoBehaviour
             
         }
 
-        if (transform.position != lastPos)
-        {
-            player.anim.SetBool("isWalking", true);
-        }
-        else
-        {
-            player.anim.SetBool("isWalking", false);
-        }
-
-        lastPos = transform.position;
+        
         
     }
 

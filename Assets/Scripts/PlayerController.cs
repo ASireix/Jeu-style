@@ -18,10 +18,17 @@ public class PlayerController : MonoBehaviour
     public delegate void TestDelegate(PlayerController playerController); // This defines what type of method you're going to call.
     public TestDelegate AnimationFunctionToCall;
 
+    public AbilityManager abilityManager;
+
     public void TriggerAnimFunction()
     {
-        Debug.Log("Launch Anim");
+       
         AnimationFunctionToCall(this);
         
+    }
+
+    public void DecreaseEnergy(float amount)
+    {
+        energy -= amount;
     }
 }
