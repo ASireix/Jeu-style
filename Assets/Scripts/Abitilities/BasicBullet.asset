@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: baseBullet
   cooldDownTime: 0
-  activeTime: 0
+  activeTime: 2
   requiredEnergy: 25
   bulletPrefab: {fileID: 1205902370950162045, guid: 96cbd9ea268454a40baf35dad2a4df8e, type: 3}

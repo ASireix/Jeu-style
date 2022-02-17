@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public AbilityManager abilitiesPTwo;
 
     public Image clock;
+    public Image backgroundClock;
 
     public Image EnergyBarWhite;
     public Image EnergyBarBlack;

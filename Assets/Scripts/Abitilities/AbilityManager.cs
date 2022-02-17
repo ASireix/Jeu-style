@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,12 +10,13 @@ public class AbilityManager : ScriptableObject
 
     public float energy = 100;
 
+    [System.NonSerialized]
     public UnityEvent<string,float> energyChangeEvent;
 
     public float regenSpeed;
-    public float currentRegenSpeed;
 
-    public int penalityDuration;
+    [System.NonSerialized]
+    public float currentRegenSpeed;
 
 
     private void OnEnable()
@@ -30,14 +30,17 @@ public class AbilityManager : ScriptableObject
         currentRegenSpeed = regenSpeed;
     }
 
-    public async void DecreaseEnergy(string col, int amount)
+    public void ResetEverything()
+    {
+        energy = maxEnergy;
+        currentRegenSpeed = regenSpeed;
+    }
+
+    public void DecreaseEnergy(string col, int amount)
     {
         energy -= amount;
         energyChangeEvent.Invoke(col,(float)energy/maxEnergy);
 
-        currentRegenSpeed = 0;
-        await Task.Delay(penalityDuration*1000);
-        currentRegenSpeed = regenSpeed;
     }
 
     public void IncreaseEnergy(string col, float amount)

@@ -10,7 +10,12 @@ public class Ability : ScriptableObject
 
     public virtual void Activate(PlayerController player)
     {
+        player.abilityManager.currentRegenSpeed = 0;
+    }
 
+    public virtual void BeginCooldown(PlayerController player)
+    {
+        player.abilityManager.currentRegenSpeed = player.abilityManager.regenSpeed;
     }
 
 }

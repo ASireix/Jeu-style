@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public PlayerInputManager playerInputManager;
 
     [Header("UI")]
+    public UIManager uIManager;
     public GameObject victoryScreen;
     public TextMeshProUGUI victoryText;
 
@@ -42,20 +43,22 @@ public class GameManager : MonoBehaviour
     [Header("timer")]
     public float maxCountDown;
     float timeRemainingUntilChange;
-    public TextMeshProUGUI timerText;
-
-    [Header("CD Managers")]
-    public CDHelper whiteCD;
-    public CDHelper blackCD;
 
     bool hasStarted;
+
+    PlayerController blackController;
+    PlayerController whiteController;
     private void Start()
     {
         isWhite = true;
         timeRemainingUntilChange = maxCountDown;
+
+        
+
         playerInputManager.JoinPlayer(0,-1,"Keyboard");
         playerInputManager.JoinPlayer(1, -1, "Gamepad");
         victoryScreen.SetActive(false);
+
     }
 
     private void Update()
@@ -93,7 +96,8 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void OnPlayerJoined(PlayerInput playerInput) { 
+    public void OnPlayerJoined(PlayerInput playerInput) 
+    { 
         if (!StickWhite)
         {
             Debug.Log("white join");
@@ -114,8 +118,8 @@ public class GameManager : MonoBehaviour
     {
         if (StickBlack && StickWhite)
         {
-            PlayerController blackController = StickBlack.GetComponent<PlayerController>();
-            PlayerController whiteController = StickWhite.GetComponent<PlayerController>();
+            blackController = StickBlack.GetComponent<PlayerController>();
+            whiteController = StickWhite.GetComponent<PlayerController>();
 
             StickBlack.GetComponent<Outline>().OutlineColor = Color.white;
             StickWhite.GetComponent<Outline>().OutlineColor = Color.black;
@@ -138,6 +142,9 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        blackController.abilityManager.ResetEverything();
+        whiteController.abilityManager.ResetEverything();
     }
 }

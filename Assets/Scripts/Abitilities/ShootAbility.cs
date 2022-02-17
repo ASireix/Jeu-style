@@ -12,7 +12,7 @@ public class ShootAbility : Ability
     {
         if (!player.anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot") && requiredEnergy<=player.abilityManager.energy)
         {
-            
+            base.Activate(player);
             player.anim.SetTrigger("Shoot");
             int r = Random.Range(0, 2);
             player.anim.SetFloat("ShootingAnim", r);

@@ -13,10 +13,5 @@ MonoBehaviour:
   m_Name: P1AbilityManager
   m_EditorClassIdentifier: 
   maxEnergy: 100
-  energy: 46.687954
-  energyChangeEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  regenSpeed: 5
-  currentRegenSpeed: 5
-  penalityDuration: 2
+  energy: 100
+  regenSpeed: 15
