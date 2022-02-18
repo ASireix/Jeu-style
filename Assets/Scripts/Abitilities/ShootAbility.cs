@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class ShootAbility : Ability
 {
-    public int requiredEnergy;
+    
     public GameObject bulletPrefab;
 
     public override void Activate(PlayerController player)

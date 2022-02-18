@@ -15,6 +15,18 @@ ModelImporter:
   - first:
       74: -9048933933583981670
     second: EXPArmature|EXP_StickShootV2
+  - first:
+      74: -4147201464328737565
+    second: EXPArmature|EXP_StickBeamCharge
+  - first:
+      74: -9114741284981373792
+    second: EXPArmature|EXP_StickBeamFall
+  - first:
+      74: -1984710938705212096
+    second: EXPArmature|EXP_StickBeamShoot
+  - first:
+      74: -8186162652428018849
+    second: EXPArmature|EXP_StickInversion
   externalObjects: {}
   materials:
     materialImportMode: 2

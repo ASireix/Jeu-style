@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Ability : ScriptableObject
 {
+    public int requiredEnergy;
+
     public new string name;
     public float cooldDownTime;
     public float activeTime;
 
+    public string triggerAnimName;
+
+    public AnimationClip clip;
     public virtual void Activate(PlayerController player)
     {
         player.abilityManager.currentRegenSpeed = 0;

@@ -11,11 +11,14 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
 
     public Transform shootingPos;
+    public Transform beamPos;
 
     public delegate void TestDelegate(PlayerController playerController); // This defines what type of method you're going to call.
     public TestDelegate AnimationFunctionToCall;
 
     public AbilityManager abilityManager;
+
+    protected AnimatorOverrideController animatorOverride;
 
     private void Update()
     {

@@ -70,6 +70,18 @@ public class Bullet : MonoBehaviour
         }
     }
 
+    public void InvertColor()
+    {
+        if (bulletColor == "white")
+        {
+            SetBullet("black");
+        }
+        else
+        {
+            SetBullet("white");
+        }
+    }
+
     public void BlinkOutline()
     {
         currentBlinkTime = blinkTime;
