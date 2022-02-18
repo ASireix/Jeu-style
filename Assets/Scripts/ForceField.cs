@@ -15,6 +15,11 @@ public class ForceField : MonoBehaviour
         StartCoroutine("Grow");
     }
 
+    private void Update()
+    {
+        
+    }
+
     public IEnumerator Grow()
     {
         while(gameObject.transform.localScale.x  < maxSize)
