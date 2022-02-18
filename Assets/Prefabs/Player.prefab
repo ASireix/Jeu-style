@@ -1617,6 +1617,7 @@ MonoBehaviour:
   shootingPos: {fileID: 3758693010130458775}
   beamPos: {fileID: 0}
   abilityManager: {fileID: 11400000, guid: 7e9cc9942cab62547afe5c0e16b8622d, type: 2}
+  animatorOverride: {fileID: 0}
   shootAbility: {fileID: 0}
   abilityOne: {fileID: 0}
   abilityTwo: {fileID: 0}
@@ -1661,7 +1662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7f4e239bd2f9ff4b926e76f273d0e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability: {fileID: 0}
+  ability: {fileID: 11400000, guid: 1101bf1ea2a4d5d449c6b6696be9057a, type: 2}
 --- !u!114 &1482233035093811622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1674,7 +1675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7f4e239bd2f9ff4b926e76f273d0e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability: {fileID: 0}
+  ability: {fileID: 11400000, guid: 1101bf1ea2a4d5d449c6b6696be9057a, type: 2}
 --- !u!114 &8191169357112126951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1717,7 +1718,19 @@ MonoBehaviour:
     m_ActionId: cd952918-0f14-421b-8c3b-667aad11b8a4
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1482233035093811617}
+        m_TargetAssemblyTypeName: AbilityHolder, Assembly-CSharp
+        m_MethodName: OnCast
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 9838a818-5789-4753-bb64-950c06b4e26a
     m_ActionName: Player/Invert[/Mouse/rightButton]
   - m_PersistentCalls:

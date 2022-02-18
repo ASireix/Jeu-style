@@ -11,9 +11,38 @@ public class AbilityHolder : MonoBehaviour
     float coolDownTime;
     float activeTime;
 
-    public void SetClips(PlayerController play)
+    public void SetClips(PlayerController play, string whichOne)
     {
-
+        switch (whichOne)
+        {
+            case "one":
+                ability.triggerAnimName = "AbilityOne";
+                playerCtrl.animatorOverride["AbilityOne"] = ability.startClip;
+                if (ability.activeClip)
+                {
+                    playerCtrl.animatorOverride["ActiveOne"] = ability.activeClip;
+                }
+                if (ability.recoveryClip)
+                {
+                    playerCtrl.animatorOverride["RecoveryOne"] = ability.recoveryClip;
+                }
+        
+                break;
+            case "two":
+                ability.triggerAnimName = "AbilityTwo";
+                playerCtrl.animatorOverride["AbilityTwo"] = ability.startClip;
+                if (ability.activeClip)
+                {
+                    playerCtrl.animatorOverride["ActiveTwo"] = ability.activeClip;
+                }
+                if (ability.recoveryClip)
+                {
+                    playerCtrl.animatorOverride["RecoveryTwo"] = ability.recoveryClip;
+                }
+                break;
+            default:
+                break;
+        }
     }
     private void Start()
     {

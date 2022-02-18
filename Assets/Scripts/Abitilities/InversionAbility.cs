@@ -17,6 +17,7 @@ public class InversionAbility : Ability
         {
             base.Activate(player);
             player.anim.SetTrigger(triggerAnimName);
+            player.AnimationFunctionToCall = SpawnForceField;
         }
     }
 
