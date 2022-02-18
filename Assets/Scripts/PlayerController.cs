@@ -20,16 +20,22 @@ public class PlayerController : MonoBehaviour
 
     protected AnimatorOverrideController animatorOverride;
 
+    public AbilityHolder shootAbility;
+
     public AbilityHolder abilityOne;
     public AbilityHolder abilityTwo;
+
+    public AnimationClip testClip;
 
     private void Start()
     {
         animatorOverride = new AnimatorOverrideController(anim.runtimeAnimatorController);
         anim.runtimeAnimatorController = animatorOverride;
 
-        abilityOne.SetClips(this);
-        abilityTwo.SetClips(this);
+        //abilityOne.SetClips(this);
+        //abilityTwo.SetClips(this);
+
+        animatorOverride["StickIdle"] = testClip;
     }
 
     private void Update()

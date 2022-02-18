@@ -1615,7 +1615,12 @@ MonoBehaviour:
   color: white
   anim: {fileID: 1482233035093811623}
   shootingPos: {fileID: 3758693010130458775}
+  beamPos: {fileID: 0}
   abilityManager: {fileID: 11400000, guid: 7e9cc9942cab62547afe5c0e16b8622d, type: 2}
+  shootAbility: {fileID: 0}
+  abilityOne: {fileID: 0}
+  abilityTwo: {fileID: 0}
+  testClip: {fileID: 7400000, guid: 06647b023430b524c874fb952ad8c453, type: 2}
 --- !u!114 &1482233035093811619
 MonoBehaviour:
   m_ObjectHideFlags: 0
