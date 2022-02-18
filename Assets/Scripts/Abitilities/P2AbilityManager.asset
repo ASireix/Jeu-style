@@ -14,9 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxEnergy: 100
   energy: 100
-  energyChangeEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  regenSpeed: 5
-  currentRegenSpeed: 5
-  penalityDuration: 2
+  regenSpeed: 15

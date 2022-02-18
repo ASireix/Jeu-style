@@ -20,6 +20,18 @@ public class PlayerController : MonoBehaviour
 
     protected AnimatorOverrideController animatorOverride;
 
+    public AbilityHolder abilityOne;
+    public AbilityHolder abilityTwo;
+
+    private void Start()
+    {
+        animatorOverride = new AnimatorOverrideController(anim.runtimeAnimatorController);
+        anim.runtimeAnimatorController = animatorOverride;
+
+        abilityOne.SetClips(this);
+        abilityTwo.SetClips(this);
+    }
+
     private void Update()
     {
         if (abilityManager.energy < abilityManager.maxEnergy)

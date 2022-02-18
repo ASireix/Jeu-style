@@ -11,6 +11,10 @@ public class AbilityHolder : MonoBehaviour
     float coolDownTime;
     float activeTime;
 
+    public void SetClips(PlayerController play)
+    {
+
+    }
     private void Start()
     {
         playerCtrl = gameObject.GetComponent<PlayerController>();

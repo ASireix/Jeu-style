@@ -12,7 +12,10 @@ public class Ability : ScriptableObject
 
     public string triggerAnimName;
 
-    public AnimationClip clip;
+    public AnimationClip activeClip;
+    public AnimationClip recoveryClip;
+    public AnimationClip startClip;
+
     public virtual void Activate(PlayerController player)
     {
         player.abilityManager.currentRegenSpeed = 0;

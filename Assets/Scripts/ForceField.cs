@@ -40,7 +40,7 @@ public class ForceField : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "bullet")
+        if (other.gameObject.tag == "Bullet")
         {
             other.GetComponent<Bullet>().InvertColor();
         }
