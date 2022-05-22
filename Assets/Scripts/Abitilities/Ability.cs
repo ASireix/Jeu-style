@@ -18,12 +18,18 @@ public class Ability : ScriptableObject
 
     public virtual void Activate(PlayerController player)
     {
-        player.abilityManager.currentRegenSpeed = 0;
+        Debug.Log("Activate "+name);
+        player.currentMPRegen = 0;
     }
 
     public virtual void BeginCooldown(PlayerController player)
     {
-        player.abilityManager.currentRegenSpeed = player.abilityManager.regenSpeed;
+        Debug.Log("CD of " + name);
+        player.currentMPRegen = player.characterStat.EnergyRegenSpeed;
     }
 
+    public IEnumerator ChangeRegenSpeed(float duration,float newRegen)
+    {
+        yield return null;
+    }
 }

@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Invert",
+                    "name": "AbilityOne",
                     "type": "Button",
                     "id": "9838a818-5789-4753-bb64-950c06b4e26a",
                     "expectedControlType": "Button",
@@ -129,7 +129,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Invert",
+                    "action": "AbilityOne",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -140,7 +140,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Invert",
+                    "action": "AbilityOne",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

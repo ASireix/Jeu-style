@@ -37,7 +37,7 @@ public partial class @ActionMap : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Invert"",
+                    ""name"": ""AbilityOne"",
                     ""type"": ""Button"",
                     ""id"": ""9838a818-5789-4753-bb64-950c06b4e26a"",
                     ""expectedControlType"": ""Button"",
@@ -151,7 +151,7 @@ public partial class @ActionMap : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Invert"",
+                    ""action"": ""AbilityOne"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -162,7 +162,7 @@ public partial class @ActionMap : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Invert"",
+                    ""action"": ""AbilityOne"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -202,7 +202,7 @@ public partial class @ActionMap : IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
-        m_Player_Invert = m_Player.FindAction("Invert", throwIfNotFound: true);
+        m_Player_AbilityOne = m_Player.FindAction("AbilityOne", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
     }
 
@@ -264,14 +264,14 @@ public partial class @ActionMap : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
-    private readonly InputAction m_Player_Invert;
+    private readonly InputAction m_Player_AbilityOne;
     private readonly InputAction m_Player_Shoot;
     public struct PlayerActions
     {
         private @ActionMap m_Wrapper;
         public PlayerActions(@ActionMap wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
-        public InputAction @Invert => m_Wrapper.m_Player_Invert;
+        public InputAction @AbilityOne => m_Wrapper.m_Player_AbilityOne;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -285,9 +285,9 @@ public partial class @ActionMap : IInputActionCollection2, IDisposable
                 @Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                @Invert.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInvert;
-                @Invert.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInvert;
-                @Invert.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInvert;
+                @AbilityOne.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbilityOne;
+                @AbilityOne.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbilityOne;
+                @AbilityOne.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAbilityOne;
                 @Shoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
@@ -298,9 +298,9 @@ public partial class @ActionMap : IInputActionCollection2, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
-                @Invert.started += instance.OnInvert;
-                @Invert.performed += instance.OnInvert;
-                @Invert.canceled += instance.OnInvert;
+                @AbilityOne.started += instance.OnAbilityOne;
+                @AbilityOne.performed += instance.OnAbilityOne;
+                @AbilityOne.canceled += instance.OnAbilityOne;
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
@@ -329,7 +329,7 @@ public partial class @ActionMap : IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
-        void OnInvert(InputAction.CallbackContext context);
+        void OnAbilityOne(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
     }
 }

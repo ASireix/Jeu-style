@@ -8,21 +8,11 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [Header("Players")]
-    public GameObject playerPrefab;
-    GameObject StickWhite;
-    GameObject StickBlack;
-    public AbilityManager PlayerOneAbilityManager;
-    public AbilityManager PlayerTwoAbilityManager;
+    public List<GameObject> playersPrefabs;
+    private List<GameObject> players;
 
-    [Header("Materials")]
-    public Material WhiteMat;
-    public Material BlackMat;
-
-    public Material GroundWhite;
-    public Material GroundBlack;
-
-    public Material WallWhite;
-    public Material WallBlack;
+    [Header("Starting Pos")]
+    public List<Transform> spawns;
 
     [Header("Input manager")]
     public PlayerInputManager playerInputManager;
@@ -32,119 +22,114 @@ public class GameManager : MonoBehaviour
     public GameObject victoryScreen;
     public TextMeshProUGUI victoryText;
 
-    [Header("Starting Pos")]
-    public Transform whitePosition;
-    public Transform blackPosition;
+    public Canvas canvas;
 
-    [Header("terrain")]
-    public ArenaMatManager ground;
-    bool isWhite;
-
-    [Header("timer")]
-    public float maxCountDown;
-    float timeRemainingUntilChange;
+    
 
     bool hasStarted;
-
-    PlayerController blackController;
-    PlayerController whiteController;
     private void Start()
     {
-        isWhite = true;
-        timeRemainingUntilChange = maxCountDown;
+        players = new List<GameObject>();
+        if (playersPrefabs.Count <= 0)
+        {
+            Debug.Log("No players selected");
+        }
+        else
+        {
+            int i = 0;
+            foreach (var p in playersPrefabs)
+            {
 
-        
-
-        playerInputManager.JoinPlayer(0,-1,"Keyboard");
-        playerInputManager.JoinPlayer(1, -1, "Gamepad");
+                playerInputManager.playerPrefab = p;
+                playerInputManager.JoinPlayer(i, -1);
+                i++;
+            }
+            SetPlayers();
+            hasStarted = true;
+        }
         victoryScreen.SetActive(false);
 
     }
 
     private void Update()
     {
-        if (timeRemainingUntilChange > 0)
-        {
-            timeRemainingUntilChange -= Time.deltaTime;
-        }
-        else
-        {
-            if (isWhite)
-            {
-                ground.SetColor(WallBlack, GroundBlack);
-                isWhite = false;
-            }
-            else
-            {
-                ground.SetColor(WallWhite, GroundWhite);
-                isWhite = true;
-            }
-            
-            timeRemainingUntilChange = maxCountDown;
-        }
-
-        if (hasStarted && !StickWhite)
+        if (hasStarted && players.Count<1)
         {
             victoryScreen.SetActive(true);
-            victoryText.text = "Le blacos a gagné";
-        }else if (hasStarted && !StickBlack)
-        {
-            victoryScreen.SetActive(true);
-            victoryText.text = "Le banc gagne";
+            victoryText.text = players[0].GetComponent<PlayerController>().characterStat.Name+" Win";
         }
-
-        
     }
 
     public void OnPlayerJoined(PlayerInput playerInput) 
-    { 
-        if (!StickWhite)
-        {
-            Debug.Log("white join");
-            StickWhite = playerInput.gameObject;
-            StickWhite.transform.position = whitePosition.position;
-        }
-        else
-        {
-            Debug.Log("black join");
-            StickBlack = playerInput.gameObject;
-            StickBlack.transform.position = blackPosition.position;
-        }
+    {
+        Debug.Log("A Player spawn in the game");
 
-        SetPlayer();
+        players.Add(playerInput.gameObject);
+
     }
 
-    void SetPlayer()
+    void SetPlayers()
     {
-        if (StickBlack && StickWhite)
+        string[] PlayerNumberString = System.Enum.GetNames(typeof(PlayerNumber));
+        List<PlayerController> playersControllers = new List<PlayerController>();
+
+        PlayerController playerController;
+        for (int i = 0; i < players.Count; i++)
         {
-            blackController = StickBlack.GetComponent<PlayerController>();
-            whiteController = StickWhite.GetComponent<PlayerController>();
+            players[i].transform.position = spawns[i].position;
 
-            StickBlack.GetComponent<Outline>().OutlineColor = Color.white;
-            StickWhite.GetComponent<Outline>().OutlineColor = Color.black;
+            playerController = players[i].GetComponent<PlayerController>();
 
-            blackController.mesh.material = BlackMat;
-            whiteController.mesh.material = WhiteMat;
+            
+            playerController.playerNumber = (PlayerNumber)System.Enum.Parse(typeof(PlayerNumber), PlayerNumberString[i]);
 
-            blackController.color = "black";
-            whiteController.color = "white";
+            GameObject pUi = Instantiate(playerController.ui);
+            playerController.playerUI = pUi.GetComponent<PlayerUI>();
+            pUi.transform.SetParent(canvas.transform);
 
-            StickBlack.layer = LayerMask.NameToLayer("Black");
-            StickWhite.layer = LayerMask.NameToLayer("White");
+            playersControllers.Add(playerController);
 
-            blackController.abilityManager = PlayerTwoAbilityManager;
-            whiteController.abilityManager = PlayerOneAbilityManager;
-
-            hasStarted = true;
         }
+
+        foreach (var item in playersControllers)
+        {
+            RectTransform rectTransform;
+            rectTransform = item.playerUI.GetComponent<RectTransform>();
+            rectTransform.localScale = new Vector3(1, 1, 1);
+            switch (item.playerNumber)
+            {
+                case PlayerNumber.PlayerOne:
+                    rectTransform.SetAnchor(AnchorPresets.BottomLeft);
+                    rectTransform.SetPivot(PivotPresets.BottomLeft);
+                    break;
+                case PlayerNumber.PlayerTwo:
+                    rectTransform.SetAnchor(AnchorPresets.BottomRight);
+                    rectTransform.SetPivot(PivotPresets.BottomRight);
+                    break;
+                case PlayerNumber.PlayerThree:
+                    rectTransform.SetAnchor(AnchorPresets.TopLeft);
+                    rectTransform.SetPivot(PivotPresets.TopLeft);
+                    break;
+                case PlayerNumber.PlayerFour:
+                    rectTransform.SetAnchor(AnchorPresets.TopRight);
+                    rectTransform.SetPivot(PivotPresets.TopRight);
+                    break;
+                default:
+                    break;
+            }
+
+            uIManager.playersUIs.Add(item);
+            uIManager.SetListeners();
+        }   
     }
 
     public void RestartGame()
     {
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        blackController.abilityManager.ResetEverything();
-        whiteController.abilityManager.ResetEverything();
+        foreach (var item in playersPrefabs)
+        {
+            item.GetComponent<PlayerController>().ResetEverything();
+        }
     }
 }

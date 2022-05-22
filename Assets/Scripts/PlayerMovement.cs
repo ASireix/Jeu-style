@@ -18,12 +18,17 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 lastPos;
 
+    bool canMove;
+    bool canRotate;
+
     private void Start()
     {
         player = gameObject.GetComponent<PlayerController>();
         cam = Camera.main;
         characterController.Move(new Vector3(0,1,0) * speed * Time.deltaTime);
         lastPos = transform.position;
+        canMove = true;
+        canRotate = true;
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -47,19 +52,28 @@ public class PlayerMovement : MonoBehaviour
 
         lastPos = transform.position;
 
-        if (player.anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
+        if (!canMove && !canRotate)
         {
             return;
         }
 
         movement = Quaternion.Euler(0, cam.transform.eulerAngles.y, 0) * movement;
-        //transform.rotation = Quaternion.Euler(0f, cam.transform.eulerAngles.y, 0f);
-        characterController.Move(movement * speed * Time.deltaTime);
+        if (canMove)
+        {
+            
+            //transform.rotation = Quaternion.Euler(0f, cam.transform.eulerAngles.y, 0f);
+            characterController.Move(movement * speed * Time.deltaTime);
+        }
+        
         if (movement != Vector3.zero)
         {
             float targetAngle = Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSpeed);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            if (canRotate)
+            {
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            }
+            
             
         }
 
@@ -67,5 +81,35 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    public void LockAll()
+    {
+        canMove = false;
+        canRotate = false;
+    }
+
+    public void UnlockAll()
+    {
+        canMove = true;
+        canRotate = true;
+    }
+
+    public void LockMov()
+    {
+        canMove = false;
+    }
+
+    public void UnlockMov()
+    {
+        canMove = true;
+    }
     
+    public void LockRot()
+    {
+        canRotate = false;
+    }
+
+    public void UnlockRot()
+    {
+        canRotate = true;
+    }
 }

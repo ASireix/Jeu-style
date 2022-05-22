@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxEnergy: 100
   energy: 100
-  regenSpeed: 15
+  regenSpeed: 56.28

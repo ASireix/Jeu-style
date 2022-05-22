@@ -1,0 +1,78 @@
+Personnage
+
+Nom : C'est un mage
+
+PV : 1/5
+MP : 5/5
+
+Vitesse : 1/5
+
+-----------------------------------
+
+Projectiles
+
+Description (patern ou effet): Un rayon laser à la star wars en ligne droite
+
+Dégat : 1/5
+Vitesse : 5/5
+MP: 5/5
+
+Status : (ça peut être n'importe quoi, genre brulant ou electrifié') aucun
+
+-----------------------------------
+
+Compétence 1
+
+Description (patern ou effet): Un très gros laser qui fait toute la map.
+Met beaucoup de temps à charger mais peut TOD si bien positionner
+
+Dégat : 5/5
+Vitesse : 1/5
+MP: 3/5
+CD : 5/5
+
+Vitesse d'animation : - Startup :
+					  - Active :
+					  - Recovery :
+
+Status : (ça peut être n'importe quoi, genre brulant ou electrifié')
+
+-----------------------------------
+
+Compétence 2
+
+Description (patern ou effet):
+
+Dégat : X/5
+Vitesse : X/5
+MP: X/5
+CD : X/5
+
+Vitesse d'animation : - Startup :
+					  - Active :
+					  - Recovery :
+
+Status : (ça peut être n'importe quoi, genre brulant ou electrifié')
+
+-----------------------------------
+
+Ultime
+
+Description (patern ou effet): Chaque projectile 
+
+Passif :
+
+Status : (ça peut être n'importe quoi, genre brulant ou electrifié')
+
+-----------------------------------
+
+Status
+
+Description détaillée des status utilisé :
+
+-----------------------------------
+
+Plan de jeu :
+(Exemple : son utlime est très fort donc le reste des compétence est équilibré de tel sorte)
+
+

@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e053cdce1ccf84f80cc6095197b1f0, type: 3}
   m_Name: BasicBullet
   m_EditorClassIdentifier: 
-  name: baseBullet
-  cooldDownTime: 0
-  activeTime: 2
   requiredEnergy: 25
+  name: baseBullet
+  cooldDownTime: 1
+  activeTime: 0
+  triggerAnimName: 
+  activeClip: {fileID: 0}
+  recoveryClip: {fileID: 0}
+  startClip: {fileID: 0}
   bulletPrefab: {fileID: 1205902370950162045, guid: 96cbd9ea268454a40baf35dad2a4df8e, type: 3}

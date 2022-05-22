@@ -7,10 +7,9 @@ public class ShootAbility : Ability
 {
     
     public GameObject bulletPrefab;
-
     public override void Activate(PlayerController player)
     {
-        if (!player.anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot") && requiredEnergy<=player.abilityManager.energy)
+        if (!player.anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot") && requiredEnergy<=player.currentEnergy)
         {
             base.Activate(player);
             player.anim.SetTrigger("Shoot");
@@ -23,8 +22,7 @@ public class ShootAbility : Ability
 
     void ShootBullet(PlayerController player)
     {
-        player.abilityManager.DecreaseEnergy(player.color,requiredEnergy);
+        player.DecreaseEnergy(player.playerUI,requiredEnergy);
         GameObject tempBullet = Instantiate(bulletPrefab, player.shootingPos.position, player.transform.rotation);
-        tempBullet.GetComponent<Bullet>().SetBullet(player.color);
     }
 }

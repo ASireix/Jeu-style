@@ -7,13 +7,17 @@ public class InversionAbility : Ability
 {
     public GameObject forceFieldPrefab;
 
-    ForceField forceField;
+    GameObject currentField;
+    public int maxS;
+    public float gSpeed;
+    public float sSpeed;
+
 
     public override void Activate(PlayerController player)
     {
         
 
-        if (requiredEnergy <= player.abilityManager.energy)
+        if (requiredEnergy <= player.currentEnergy && player.anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") || player.anim.GetCurrentAnimatorStateInfo(0).IsName("Move"))
         {
             base.Activate(player);
             player.anim.SetTrigger(triggerAnimName);
@@ -24,14 +28,23 @@ public class InversionAbility : Ability
     public override void BeginCooldown(PlayerController player)
     {
         base.BeginCooldown(player);
+        if (currentField)
+        {
+            currentField.GetComponent<ForceField>().Shrinkage();
+        }
         
-
 
     }
 
     public void SpawnForceField(PlayerController player)
     {
-        player.abilityManager.DecreaseEnergy(player.color, requiredEnergy);
-        GameObject tempBullet = Instantiate(forceFieldPrefab, player.transform.position, player.transform.rotation);
+        player.DecreaseEnergy(player.playerUI, requiredEnergy);
+        GameObject forceFieldEntitie = Instantiate(forceFieldPrefab, player.transform.position, player.transform.rotation);
+        forceFieldEntitie.transform.parent = player.gameObject.transform;
+        ForceField tempsForce = forceFieldEntitie.GetComponent<ForceField>();
+        tempsForce.maxSize = maxS;
+        tempsForce.growSpeed = gSpeed;
+        tempsForce.shrinkSpeed = sSpeed;
+        currentField = forceFieldEntitie;
     }
 }

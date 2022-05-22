@@ -5,10 +5,13 @@ using UnityEngine.InputSystem;
 
 public class AbilityHolder : MonoBehaviour
 {
+    public string type;
     PlayerController playerCtrl;
     public Ability ability;
 
-    float coolDownTime;
+    [System.NonSerialized]
+    public float coolDownTime;
+
     float activeTime;
 
     public void SetClips(PlayerController play, string whichOne)
@@ -17,27 +20,27 @@ public class AbilityHolder : MonoBehaviour
         {
             case "one":
                 ability.triggerAnimName = "AbilityOne";
-                playerCtrl.animatorOverride["AbilityOne"] = ability.startClip;
+                play.animatorOverride["AbilityOne"] = ability.startClip;
                 if (ability.activeClip)
                 {
-                    playerCtrl.animatorOverride["ActiveOne"] = ability.activeClip;
+                    play.animatorOverride["ActiveOne"] = ability.activeClip;
                 }
                 if (ability.recoveryClip)
                 {
-                    playerCtrl.animatorOverride["RecoveryOne"] = ability.recoveryClip;
+                    play.animatorOverride["RecoveryOne"] = ability.recoveryClip;
                 }
-        
+
                 break;
             case "two":
                 ability.triggerAnimName = "AbilityTwo";
-                playerCtrl.animatorOverride["AbilityTwo"] = ability.startClip;
+                play.animatorOverride["AbilityTwo"] = ability.startClip;
                 if (ability.activeClip)
                 {
-                    playerCtrl.animatorOverride["ActiveTwo"] = ability.activeClip;
+                    play.animatorOverride["ActiveTwo"] = ability.activeClip;
                 }
                 if (ability.recoveryClip)
                 {
-                    playerCtrl.animatorOverride["RecoveryTwo"] = ability.recoveryClip;
+                    play.animatorOverride["RecoveryTwo"] = ability.recoveryClip;
                 }
                 break;
             default:
@@ -62,18 +65,18 @@ public class AbilityHolder : MonoBehaviour
     {
         if (context.performed && state == AbilityState.ready)
         {
-                ability.Activate(playerCtrl);
-                state = AbilityState.active;
-                activeTime = ability.activeTime;
+            ability.Activate(playerCtrl);
+            state = AbilityState.active;
+            activeTime = ability.activeTime;
         }
-        
+
     }
 
     private void Update()
     {
         switch (state)
         {
-            
+
             case AbilityState.active:
                 if (activeTime > 0)
                 {
@@ -89,7 +92,7 @@ public class AbilityHolder : MonoBehaviour
             case AbilityState.cooldown:
                 if (coolDownTime > 0)
                 {
-                    activeTime -= Time.deltaTime;
+                    coolDownTime -= Time.deltaTime;
                 }
                 else
                 {

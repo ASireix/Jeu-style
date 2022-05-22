@@ -1,0 +1,97 @@
+Personnage
+
+Nom : Jacque Chirac
+
+PV : 2/5
+MP : 4/5
+
+Vitesse : 3/5
+
+-----------------------------------
+
+Projectiles
+
+Description (patern ou effet): Un projectile électrique qui suie une trajectoire en ligne
+
+Dégat : 2/5
+Vitesse : 3/5
+MP: 3/5
+
+Status : Electrifié (voir plus bas pour une description)
+
+-----------------------------------
+
+Compétence 1
+
+Paratonerre
+
+Description (patern ou effet): Lance un paratonerre en face du personnage qui attire les projectiles électrifiant.
+Le paratonerre a 2 zones d'effet :
+Eloignée du centre : attire les projectile légèrement vers le centre
+Proche du centre : fait tourner les projectiles attirés autour du centre
+La durée d'un pillier est indéterminé ou son nombre maximum présent sur le terrain
+La vitesse d'attrait est déterminé par son niveau d'electrifié
+
+Dégat : 0/5
+Vitesse : 5/5
+MP: 2/5
+CD : 1/5
+
+Vitesse d'animation : - Startup : 3/5
+					  - Active : 5/5
+					  - Recovery : 3/5
+
+Status : Aucun
+
+-----------------------------------
+
+Compétence 2
+
+Shock
+
+Description (patern ou effet): Une zone electrique se forme autour du personnage pendant un très court lapse de temps et électrifie tous ce qui est en sa portée
+
+Dégat : 0/5
+Vitesse : 5/5
+MP: 4/5
+CD : 3/5
+
+Vitesse d'animation : - Startup :
+					  - Active :
+					  - Recovery :
+
+Status : Electrifié
+
+-----------------------------------
+
+Ultime
+
+Aie
+
+Description (patern ou effet): Les projectiles sont lancé avec un niveau plus élevé d'électrification, tous les projectiles présent sur le terrain gagne un niveau d'électrification'
+
+Passif : 
+
+Status : (ça peut être n'importe quoi, genre brulant ou electrifié)
+
+-----------------------------------
+
+Status
+
+Description détaillée des status utilisé :
+
+Electrifié : 
+Un personnage ou un projectile peut être électrifiant
+Il y a plusieurs niveau d'électrifié, ce qui influe sur les 2 prochains paramètres
+Lorqu'un personnage est électrifié, il est étourdie pendant peut de temps
+Lorqu'un projectile est électrifié, il est ralenti modérement pendant un court laps de temps, puis revient progressivement à sa vitesse normale et reste définitivement electrifiant
+Un projectile gagne un niveau d'électrification en se faisant électrifié à nouveau
+Les projectiles électrifié électrifie le personnage qu'ils rencontrent mais pas l'inverse
+
+
+-----------------------------------
+
+Plan de jeu :
+(Exemple : son utlime est très fort donc le reste des compétence est équilibré de tel sorte)
+
+

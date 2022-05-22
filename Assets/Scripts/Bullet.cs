@@ -110,7 +110,7 @@ public class Bullet : MonoBehaviour
 
         if (leTag == "Player")
         {
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
         }
         else if (leTag == "Bullet")
         {

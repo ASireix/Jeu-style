@@ -14,10 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredEnergy: 50
   name: Inversion
-  cooldDownTime: 0
-  activeTime: 0
-  triggerAnimName: 
+  cooldDownTime: 4
+  activeTime: 0.5
+  triggerAnimName: AbilityTwo
   activeClip: {fileID: 0}
   recoveryClip: {fileID: 0}
   startClip: {fileID: 7400000, guid: af59f64563d1c294b901f90d4ab3f48b, type: 2}
   forceFieldPrefab: {fileID: 6776676950744758570, guid: 179dbf6e25dd8874eb7fac1d487347df, type: 3}
+  maxS: 10
+  gSpeed: 0.5
+  sSpeed: 0.4

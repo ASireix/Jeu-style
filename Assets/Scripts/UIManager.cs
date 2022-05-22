@@ -5,41 +5,36 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    // scriptable object
-    public AbilityManager abilitiesPOne;
-    public AbilityManager abilitiesPTwo;
+    public List<PlayerController> playersUIs;
 
     public Image clock;
-    public Image backgroundClock;
 
-    public Image EnergyBarWhite;
-    public Image EnergyBarBlack;
-
-    public Image BlackAbilityOne;
-    public Image BlackAbilityTwo;
-
-    public Image WhiteAbilityOne;
-    public Image WhiteAbilityTwo;
-
-
-    private void OnEnable()
+    public void SetListeners()
     {
-        abilitiesPOne.energyChangeEvent.AddListener(UpdateEnergy);
-        abilitiesPTwo.energyChangeEvent.AddListener(UpdateEnergy);
-    }
-    void UpdateEnergy(string coloeur, float amount)
-    {
-        switch (coloeur)
+        foreach(var item in playersUIs)
         {
-            case "white":
-                EnergyBarWhite.fillAmount = amount;
-                break;
-            case "black":
-                EnergyBarBlack.fillAmount = amount;
-                break;
-            default:
-                break;
+
+            item.energyChangeEvent.AddListener(UpdateEnergy);
+
+            item.cdOneChangeEvent.AddListener(UpdateCDOne);
+
+            item.cdTwoChangeEvent.AddListener(UpdateCDTwo);
         }
-        
+    }
+
+    void UpdateEnergy(PlayerUI ui, float amount)
+    {
+        Debug.Log("marche");
+        ui.energy.fillAmount = amount;
+    }
+
+    void UpdateCDOne(PlayerUI ui, float amount)
+    {
+        ui.abilityOne.fillAmount = amount;
+    }
+
+    void UpdateCDTwo(PlayerUI ui, float amount)
+    {
+        ui.abilityTwo.fillAmount = amount;
     }
 }

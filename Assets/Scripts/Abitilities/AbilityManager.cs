@@ -13,18 +13,41 @@ public class AbilityManager : ScriptableObject
     [System.NonSerialized]
     public UnityEvent<string,float> energyChangeEvent;
 
+    [System.NonSerialized]
+    public UnityEvent<string, float> cdOneChangeEvent;
+
+    [System.NonSerialized]
+    public UnityEvent<string, float> cdTwoChangeEvent;
+
     public float regenSpeed;
 
     [System.NonSerialized]
     public float currentRegenSpeed;
 
+    AbilityHolder abilityOne;
+    AbilityHolder abilityTwo;
 
+    public void SetAbilities(AbilityHolder ab1, AbilityHolder ab2)
+    {
+        abilityOne = ab1;
+        abilityTwo = ab2;
+    }
     private void OnEnable()
     {
         energy = maxEnergy;
         if (energyChangeEvent == null)
         {
             energyChangeEvent = new UnityEvent<string,float>();
+        }
+
+        if (cdOneChangeEvent == null)
+        {
+            cdOneChangeEvent = new UnityEvent<string, float>();
+        }
+
+        if (cdTwoChangeEvent == null)
+        {
+            cdTwoChangeEvent = new UnityEvent<string, float>();
         }
 
         currentRegenSpeed = regenSpeed;
@@ -50,5 +73,13 @@ public class AbilityManager : ScriptableObject
     }
 
     
+    public void UpdateCDOne(string col,float cd)
+    {
+        cdOneChangeEvent.Invoke(col,cd);
+    }
 
+    public void UpdateCDTwo(string col,float cd)
+    {
+        cdTwoChangeEvent.Invoke(col,cd);
+    }
 }
