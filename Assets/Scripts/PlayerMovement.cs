@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 movement = new Vector3(directionVector.x, 0, directionVector.y).normalized;
 
-        if (transform.position != lastPos)
+        if (transform.position != lastPos && movement != Vector3.zero)
         {
             player.anim.SetBool("isWalking", true);
         }

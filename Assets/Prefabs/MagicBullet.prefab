@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6850051723639838989}
   - component: {fileID: 3488379415825977303}
   - component: {fileID: 8031916600411285445}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MagicBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -170,6 +170,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4a92a6bef1892b44bb6a356e4706ef68, type: 3}
       propertyPath: m_Name
       value: TentacleProj
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4a92a6bef1892b44bb6a356e4706ef68, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a92a6bef1892b44bb6a356e4706ef68, type: 3}
