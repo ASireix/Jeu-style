@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     Rigidbody rb;
     public float force;
     public int rotationSpeed;
+    public float dmg;
 
     public Outline outline;
 
@@ -110,12 +111,12 @@ public class Bullet : MonoBehaviour
 
         if (leTag == "Player")
         {
-            //Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<PlayerController>().DecreaseHealth(dmg);
+            Destroy(gameObject);
         }
         else if (leTag == "Bullet")
         {
             Destroy(collision.gameObject);
-            Destroy(this);
         }
             /*
         else

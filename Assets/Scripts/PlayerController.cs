@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterStat characterStat;
     public PlayerNumber playerNumber;
-    public PlayerStats playerStats;
 
     [Header("Animations")]
 
@@ -53,6 +52,9 @@ public class PlayerController : MonoBehaviour
     [System.NonSerialized]
     public UnityEvent<PlayerUI, float> healthChangeEvent;
 
+    [System.NonSerialized]
+    public UnityEvent<GameObject> liveChangeEvent;
+
 
     private void Awake()
     {
@@ -80,22 +82,32 @@ public class PlayerController : MonoBehaviour
         {
             cdTwoChangeEvent = new UnityEvent<PlayerUI, float>();
         }
+
+        if (healthChangeEvent == null)
+        {
+            healthChangeEvent = new UnityEvent<PlayerUI, float>();
+        }
+
+        if (liveChangeEvent == null)
+        {
+            liveChangeEvent = new UnityEvent<GameObject>();
+        }
     }
 
     private void Update()
     {
         if (currentEnergy < characterStat.Energy)
         {
-            IncreaseEnergy(playerUI, currentMPRegen * Time.deltaTime);
+            IncreaseEnergy(currentMPRegen * Time.deltaTime);
         }
         else
         {
             currentEnergy = characterStat.Energy;
         }
 
-        UpdateCDOne(playerUI,1 - (playerAbilityOne.coolDownTime / playerAbilityOne.ability.cooldDownTime));
+        UpdateCDOne(1 - (playerAbilityOne.coolDownTime / playerAbilityOne.ability.cooldDownTime));
         
-        UpdateCDTwo(playerUI,1 - (playerAbilityTwo.coolDownTime / playerAbilityTwo.ability.cooldDownTime));
+        UpdateCDTwo(1 - (playerAbilityTwo.coolDownTime / playerAbilityTwo.ability.cooldDownTime));
 
     }
 
@@ -114,43 +126,54 @@ public class PlayerController : MonoBehaviour
         gameObject.GetComponent<PlayerMovement>().speed = currentSpeed;
     }
 
-    public void DecreaseEnergy(PlayerUI ui, int amount)
+    public void DecreaseEnergy(int amount)
     {
         currentEnergy -= amount;
-        energyChangeEvent.Invoke(ui, currentEnergy / characterStat.Energy);
+        energyChangeEvent.Invoke(playerUI, currentEnergy / characterStat.Energy);
     }
 
-    public void IncreaseEnergy(PlayerUI ui, float amount)
+    public void IncreaseEnergy(float amount)
     {
         currentEnergy += amount;
         //ui.energy.fillAmount = currentEnergy / characterStat.Energy;
-        energyChangeEvent.Invoke(ui, currentEnergy / characterStat.Energy);
+        energyChangeEvent.Invoke(playerUI, currentEnergy / characterStat.Energy);
     }
 
 
-    public void UpdateCDOne(PlayerUI ui, float cd)
+    public void UpdateCDOne(float cd)
     {
-        cdOneChangeEvent.Invoke(ui, cd);
+        cdOneChangeEvent.Invoke(playerUI, cd);
     }
 
-    public void UpdateCDTwo(PlayerUI ui, float cd)
+    public void UpdateCDTwo(float cd)
     {
-        cdTwoChangeEvent.Invoke(ui, cd);
+        cdTwoChangeEvent.Invoke(playerUI, cd);
     }
 
-    public void IncreaseHealth(PlayerUI ui, float amount)
+    public void IncreaseHealth(float amount)
     {
         currentHealth += amount;
         if (currentHealth > characterStat.Health)
         {
             currentHealth = characterStat.Health;
         }
-        healthChangeEvent.Invoke(ui, (float)currentHealth / characterStat.Health);
+        healthChangeEvent.Invoke(playerUI, (float)currentHealth / characterStat.Health);
     }
 
-    public void DecreaseHealth(PlayerUI ui, float amount)
+    public void DecreaseHealth(float amount)
     {
         currentHealth -= amount;
-        healthChangeEvent.Invoke(ui, (float)currentHealth / characterStat.Health);
+        healthChangeEvent.Invoke(playerUI, (float)currentHealth / characterStat.Health);
+
+        if (currentHealth <= 0)
+        {
+            liveChangeEvent.Invoke(gameObject);
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        //Destroy(gameObject);
     }
 }

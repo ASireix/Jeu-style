@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("Players")]
     public List<GameObject> playersPrefabs;
+    [SerializeField]
     private List<GameObject> players;
 
     [Header("Starting Pos")]
@@ -53,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (hasStarted && players.Count<1)
+        if (hasStarted && players.Count<=1)
         {
             victoryScreen.SetActive(true);
             victoryText.text = players[0].GetComponent<PlayerController>().characterStat.Name+" Win";
@@ -65,7 +66,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("A Player spawn in the game");
 
         players.Add(playerInput.gameObject);
-
     }
 
     void SetPlayers()
@@ -88,11 +88,13 @@ public class GameManager : MonoBehaviour
             pUi.transform.SetParent(canvas.transform);
 
             playersControllers.Add(playerController);
-
+            
         }
 
         foreach (var item in playersControllers)
         {
+            item.liveChangeEvent.AddListener(UpdateLivePlayers);
+
             RectTransform rectTransform;
             rectTransform = item.playerUI.GetComponent<RectTransform>();
             rectTransform.localScale = new Vector3(1, 1, 1);
@@ -101,18 +103,22 @@ public class GameManager : MonoBehaviour
                 case PlayerNumber.PlayerOne:
                     rectTransform.SetAnchor(AnchorPresets.BottomLeft);
                     rectTransform.SetPivot(PivotPresets.BottomLeft);
+                    item.gameObject.layer = LayerMask.NameToLayer("TeamOne");
                     break;
                 case PlayerNumber.PlayerTwo:
                     rectTransform.SetAnchor(AnchorPresets.BottomRight);
                     rectTransform.SetPivot(PivotPresets.BottomRight);
+                    item.gameObject.layer = LayerMask.NameToLayer("TeamTwo");
                     break;
                 case PlayerNumber.PlayerThree:
                     rectTransform.SetAnchor(AnchorPresets.TopLeft);
                     rectTransform.SetPivot(PivotPresets.TopLeft);
+                    item.gameObject.layer = LayerMask.NameToLayer("TeamThree");
                     break;
                 case PlayerNumber.PlayerFour:
                     rectTransform.SetAnchor(AnchorPresets.TopRight);
                     rectTransform.SetPivot(PivotPresets.TopRight);
+                    item.gameObject.layer = LayerMask.NameToLayer("TeamFour");
                     break;
                 default:
                     break;
@@ -131,5 +137,10 @@ public class GameManager : MonoBehaviour
         {
             item.GetComponent<PlayerController>().ResetEverything();
         }
+    }
+
+    void UpdateLivePlayers(GameObject p)
+    {
+        players.Remove(p);
     }
 }

@@ -19,6 +19,8 @@ public class UIManager : MonoBehaviour
             item.cdOneChangeEvent.AddListener(UpdateCDOne);
 
             item.cdTwoChangeEvent.AddListener(UpdateCDTwo);
+
+            item.healthChangeEvent.AddListener(UpdateHealth);
         }
     }
 
@@ -36,5 +38,10 @@ public class UIManager : MonoBehaviour
     void UpdateCDTwo(PlayerUI ui, float amount)
     {
         ui.abilityTwo.fillAmount = amount;
+    }
+
+    void UpdateHealth(PlayerUI ui, float amount)
+    {
+        ui.health.fillAmount = amount;
     }
 }

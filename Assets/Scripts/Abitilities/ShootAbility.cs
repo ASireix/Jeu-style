@@ -22,7 +22,8 @@ public class ShootAbility : Ability
 
     void ShootBullet(PlayerController player)
     {
-        player.DecreaseEnergy(player.playerUI,requiredEnergy);
+        player.DecreaseEnergy(requiredEnergy);
         GameObject tempBullet = Instantiate(bulletPrefab, player.shootingPos.position, player.transform.rotation);
+        tempBullet.GetComponent<Bullet>().dmg = damage;
     }
 }

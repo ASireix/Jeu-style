@@ -38,7 +38,7 @@ public class InversionAbility : Ability
 
     public void SpawnForceField(PlayerController player)
     {
-        player.DecreaseEnergy(player.playerUI, requiredEnergy);
+        player.DecreaseEnergy(requiredEnergy);
         GameObject forceFieldEntitie = Instantiate(forceFieldPrefab, player.transform.position, player.transform.rotation);
         forceFieldEntitie.transform.parent = player.gameObject.transform;
         ForceField tempsForce = forceFieldEntitie.GetComponent<ForceField>();

@@ -2314,8 +2314,7 @@ MonoBehaviour:
   playersPrefabs:
   - {fileID: 5276546885061976423, guid: 5eee34230707c8346a27bc7b4873ec9e, type: 3}
   - {fileID: 5276546885061976423, guid: 5eee34230707c8346a27bc7b4873ec9e, type: 3}
-  - {fileID: 5276546885061976423, guid: 5eee34230707c8346a27bc7b4873ec9e, type: 3}
-  - {fileID: 5276546885061976423, guid: 5eee34230707c8346a27bc7b4873ec9e, type: 3}
+  players: []
   spawns:
   - {fileID: 1786107916}
   - {fileID: 20978576}

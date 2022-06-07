@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ability : ScriptableObject
 {
     public int requiredEnergy;
+    public float damage;
 
     public new string name;
     public float cooldDownTime;

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Desc: 
-  Health: 0
+  Health: 100
   Damage_Reduction_Percentage: 0
   Energy: 100
   EnergyRegenSpeed: 15
