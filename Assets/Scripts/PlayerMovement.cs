@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
-public class PlayerMovement : MonoBehaviour
+using Mirror;
+public class PlayerMovement : NetworkBehaviour
 {
     PlayerController player;
     public CharacterController characterController;
@@ -21,6 +21,11 @@ public class PlayerMovement : MonoBehaviour
     bool canMove;
     bool canRotate;
 
+    public override void OnStartAuthority()
+    {
+        enabled = true;
+    }
+
     private void Start()
     {
         player = gameObject.GetComponent<PlayerController>();
@@ -37,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         directionVector = context.ReadValue<Vector2>();
     }
     // Update is called once per frame
+    [ClientCallback]
     void Update()
     {
         Vector3 movement = new Vector3(directionVector.x, 0, directionVector.y).normalized;
