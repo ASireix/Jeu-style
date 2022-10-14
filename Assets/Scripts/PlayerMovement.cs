@@ -42,9 +42,10 @@ public class PlayerMovement : NetworkBehaviour
         directionVector = context.ReadValue<Vector2>();
     }
     // Update is called once per frame
-    [ClientCallback]
+    //[ClientCallback]
     void Update()
     {
+        Debug.Log("please move");
         Vector3 movement = new Vector3(directionVector.x, 0, directionVector.y).normalized;
 
         if (transform.position != lastPos && movement != Vector3.zero)
