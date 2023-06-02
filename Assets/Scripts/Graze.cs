@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Graze : MonoBehaviour
 {
-
-    public List<SphereCollider> nearColliders = new List<SphereCollider>();
-
+    [SerializeField]
+    List<Collider> nearColliders = new List<Collider>();
+    PlayerController playerController;
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerController = GetComponentInParent<PlayerController>();
+        gameObject.layer = playerController.gameObject.layer;
     }
 
     // Update is called once per frame
@@ -23,7 +24,7 @@ public class Graze : MonoBehaviour
     {
         if (other.tag == "Bullet")
         {
-            nearColliders.Add(other.gameObject.GetComponent<SphereCollider>());
+            nearColliders.Add(other);
         }
     }
 
@@ -31,7 +32,8 @@ public class Graze : MonoBehaviour
     {
         if (other.tag == "Bullet")
         {
-            nearColliders.Remove(other.gameObject.GetComponent<SphereCollider>());
+            nearColliders.Remove(other);
+            GameManager.instance.UpdateGauge(other.GetComponent<Bullet>().grazeAmount, playerController.playerNumber);
         }
     }
 }

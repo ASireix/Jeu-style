@@ -8,6 +8,7 @@ public class MovingBehavior : StateMachineBehaviour
 
     public bool Rotations;
     public bool Movements;
+    public bool Unlock;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -25,11 +26,16 @@ public class MovingBehavior : StateMachineBehaviour
         {
             playerMovement.LockMov();
         }
+
+        
         
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        playerMovement.UnlockAll();
+        if (Unlock)
+        {
+            playerMovement.UnlockAll();
+        }
     }
 }

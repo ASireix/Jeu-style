@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8eb1504d7b1b9e4381d5a688eb9ade1, type: 3}
+  m_Name: HKData
+  m_EditorClassIdentifier: 
+  prisonPrefab: {fileID: 852183777911332390, guid: 0e186324037a3184d8827e66922b540c, type: 3}
+  portrait: {fileID: 21300000, guid: 4b8d72e048d1bfe46b2893e77beafab3, type: 3}
+  characterPrefab: {fileID: 8987282049852776054, guid: a4baea2a1daab1b428f511263a9b20c7, type: 3}
+  positionOffset: {x: 0, y: 0.63, z: 0}
+  colorPalettes:
+  - {fileID: 11400000, guid: da1810b2d53b4284badbb17be7651bb9, type: 2}
+  - {fileID: 11400000, guid: 9e27b020890c8574eac196de867166ef, type: 2}
+  - {fileID: 11400000, guid: 7291b625d5d05534fa57996a797afb38, type: 2}

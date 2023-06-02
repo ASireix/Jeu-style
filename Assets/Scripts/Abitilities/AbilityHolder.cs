@@ -7,13 +7,12 @@ public class AbilityHolder : MonoBehaviour
 {
     public string type;
     PlayerController playerCtrl;
+    PlayerState playerState;
     public Ability ability;
-
-    [System.NonSerialized]
+    //[System.NonSerialized]
     public float coolDownTime;
 
     float activeTime;
-
     public void SetClips(PlayerController play, string whichOne)
     {
         switch (whichOne)
@@ -43,13 +42,18 @@ public class AbilityHolder : MonoBehaviour
                     play.animatorOverride["RecoveryTwo"] = ability.recoveryClip;
                 }
                 break;
+            case "three":
+                ability.triggerAnimName = "AbilityThree";
+                break;
             default:
                 break;
         }
+
     }
     private void Start()
     {
         playerCtrl = gameObject.GetComponent<PlayerController>();
+        playerState = gameObject.GetComponent<PlayerState>();
     }
 
     enum AbilityState
@@ -63,11 +67,15 @@ public class AbilityHolder : MonoBehaviour
 
     public void OnCast(InputAction.CallbackContext context)
     {
-        if (context.performed && state == AbilityState.ready)
+        if (context.performed && state == AbilityState.ready && !playerState.CheckAll() && ability.requiredEnergy <= playerCtrl.currentEnergy)
         {
-            ability.Activate(playerCtrl);
+            ability.Activate(playerCtrl,playerState);
             state = AbilityState.active;
             activeTime = ability.activeTime;
+        }
+        else
+        {
+            Debug.Log("Ability named : " + ability.name + " is in State : " + state.ToString());
         }
 
     }
@@ -78,7 +86,14 @@ public class AbilityHolder : MonoBehaviour
         {
 
             case AbilityState.active:
-                if (activeTime > 0)
+                if (playerState.recovery || !playerState.CheckAll())
+                {
+                    ability.BeginCooldown(playerCtrl);
+                    state = AbilityState.cooldown;
+                    coolDownTime = ability.cooldDownTime;
+                }
+
+                /*if (activeTime > 0)
                 {
                     activeTime -= Time.deltaTime;
                 }
@@ -87,7 +102,7 @@ public class AbilityHolder : MonoBehaviour
                     ability.BeginCooldown(playerCtrl);
                     state = AbilityState.cooldown;
                     coolDownTime = ability.cooldDownTime;
-                }
+                }*/
                 break;
             case AbilityState.cooldown:
                 if (coolDownTime > 0)
@@ -97,6 +112,7 @@ public class AbilityHolder : MonoBehaviour
                 else
                 {
                     state = AbilityState.ready;
+                    Debug.Log("ability ready to rock");
                 }
                 break;
         }

@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Ability : ScriptableObject
 {
+    [Header("Deprecated")]
+    public AnimationClip activeClip;
+    public AnimationClip recoveryClip;
+    public AnimationClip startClip;
+
+    [Header("Good ones")]
+
     public int requiredEnergy;
     public float damage;
 
@@ -12,15 +19,32 @@ public class Ability : ScriptableObject
     public float activeTime;
 
     public string triggerAnimName;
-
-    public AnimationClip activeClip;
-    public AnimationClip recoveryClip;
-    public AnimationClip startClip;
-
-    public virtual void Activate(PlayerController player)
+    [HideInInspector]
+    
+    public void Activate(PlayerController player, PlayerState pState) // YOU NEED TO DECREASE THE ENERGY MANUALLY IN EITHER ACTIVATE ABILITY OR YOUR ON TRIGGER ON ANIMATION FUNCTION !!!!
     {
-        Debug.Log("Activate "+name);
+        Debug.Log("Activate " + name);
         player.currentMPRegen = 0;
+        pState.startup = true;
+        ActivateAbility(player, pState);
+        // YOU NEED TO ASSIGN A LAYER IN A FUNCTION MANUALLY, GET IT FROM PLAYERCONTROLLER.GAMEOBJECT
+    }
+
+    public virtual void ActivateAbility(PlayerController player, PlayerState pState)
+    {
+
+    }
+
+    public virtual void EnterActive(PlayerState p)
+    {
+        p.startup = false;
+        p.active = true;
+    }
+
+    public virtual void EnterRecovery(PlayerState p)
+    {
+        p.active = false;
+        p.recovery = true;
     }
 
     public virtual void BeginCooldown(PlayerController player)
@@ -29,7 +53,7 @@ public class Ability : ScriptableObject
         player.currentMPRegen = player.characterStat.EnergyRegenSpeed;
     }
 
-    public IEnumerator ChangeRegenSpeed(float duration,float newRegen)
+    public IEnumerator ChangeRegenSpeed(float duration, float newRegen)
     {
         yield return null;
     }

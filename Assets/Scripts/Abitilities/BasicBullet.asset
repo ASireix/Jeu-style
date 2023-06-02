@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredEnergy: 25
   damage: 28
-  name: baseBullet
+  name: Shoot
   cooldDownTime: 1
   activeTime: 0
-  triggerAnimName: 
+  triggerAnimName: Shoot
   activeClip: {fileID: 0}
   recoveryClip: {fileID: 0}
   startClip: {fileID: 0}

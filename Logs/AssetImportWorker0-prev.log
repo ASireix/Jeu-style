@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2021.2/staging' branch; Version is '2021.2.10f1 (ee872746220e) revision 15632167'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 10  (10.0.19043) 64bit Core' Language: 'fr' Physical Memory: 16309 MB
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'fr' Physical Memory: 16309 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
 COMMAND LINE ARGUMENTS:
@@ -15,7 +15,7 @@ D:/3d/Incompatible Duality
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-63959
+55331
 Successfully changed project path to: D:/3d/Incompatible Duality
 D:/3d/Incompatible Duality
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ D:/3d/Incompatible Duality
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 152.59 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 166.13 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.2.10f1 (ee872746220e)
 [Subsystems] Discovering subsystems at path D:/INSTALLATION/Unity/2021.2.10f1/Editor/Data/Resources/UnitySubsystems
@@ -58,94 +58,97 @@ Direct3D:
     Renderer: AMD Radeon RX 5700 XT (ID=0x731f)
     Vendor:   ATI
     VRAM:     8151 MB
-    Driver:   30.0.15021.11005
+    Driver:   31.0.14057.2005
 Initialize mono
 Mono path[0] = 'D:/INSTALLATION/Unity/2021.2.10f1/Editor/Data/Managed'
 Mono path[1] = 'D:/INSTALLATION/Unity/2021.2.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/INSTALLATION/Unity/2021.2.10f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56216
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56568
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
+Register platform support module: D:/INSTALLATION/Unity/2021.2.10f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 Register platform support module: D:/INSTALLATION/Unity/2021.2.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003411 seconds.
+Registered in 0.004137 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 147.45 ms, found 4 plugins.
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 160.50 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.670 seconds
+- Completed reload, in  0.719 seconds
 Domain Reload Profiling:
-	ReloadAssembly (671ms)
-		BeginReloadAssembly (83ms)
+	ReloadAssembly (720ms)
+		BeginReloadAssembly (92ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (515ms)
-			LoadAssemblies (83ms)
+		EndReloadAssembly (551ms)
+			LoadAssemblies (92ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (97ms)
+			SetupTypeCache (106ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (26ms)
-			SetupLoadedEditorAssemblies (344ms)
+			SetupLoadedEditorAssemblies (368ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (14ms)
+				InitializePlatformSupportModulesInManaged (17ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (148ms)
+				RefreshPlugins (161ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (138ms)
-				ProcessInitializeOnLoadMethodAttributes (43ms)
+				ProcessInitializeOnLoadAttributes (145ms)
+				ProcessInitializeOnLoadMethodAttributes (44ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.011291 seconds.
+Registered in 0.012051 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\3d\Incompatible Duality\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\3d\Incompatible Duality\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 151.15 ms, found 4 plugins.
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 163.74 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.579 seconds
+- Completed reload, in  1.710 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1579ms)
-		BeginReloadAssembly (125ms)
+	ReloadAssembly (1711ms)
+		BeginReloadAssembly (130ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (19ms)
-		EndReloadAssembly (1357ms)
-			LoadAssemblies (120ms)
+		EndReloadAssembly (1478ms)
+			LoadAssemblies (134ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (343ms)
+			SetupTypeCache (349ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (96ms)
-			SetupLoadedEditorAssemblies (773ms)
+			RebuildScriptCaches (107ms)
+			SetupLoadedEditorAssemblies (871ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (10ms)
+				InitializePlatformSupportModulesInManaged (13ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (151ms)
-				BeforeProcessingInitializeOnLoad (137ms)
-				ProcessInitializeOnLoadAttributes (383ms)
-				ProcessInitializeOnLoadMethodAttributes (87ms)
+				RefreshPlugins (164ms)
+				BeforeProcessingInitializeOnLoad (146ms)
+				ProcessInitializeOnLoadAttributes (449ms)
+				ProcessInitializeOnLoadMethodAttributes (94ms)
 				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 2.05 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.14 seconds
+Refreshing native plugins compatible for Editor in 1.48 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 7121 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 54 unused Assets / (1.6 MB). Loaded Objects now: 7566.
-Memory consumption went from 292.0 MB to 290.4 MB.
-Total: 4.866300 ms (FindLiveObjects: 0.760300 ms CreateObjectMapping: 0.370400 ms MarkObjects: 3.191200 ms  DeleteObjects: 0.543300 ms)
+Unloading 7363 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 67 unused Assets / (1.6 MB). Loaded Objects now: 7812.
+Memory consumption went from 380.9 MB to 379.3 MB.
+Total: 4.657700 ms (FindLiveObjects: 0.627300 ms CreateObjectMapping: 0.225000 ms MarkObjects: 3.246400 ms  DeleteObjects: 0.557900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -159,181 +162,92 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 61914.381952 seconds.
-  path: Assets/MagicaCloth/Res
-  artifactKey: Guid(f1df40c15079aa043a73374c5dc2ff4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MagicaCloth/Res using Guid(f1df40c15079aa043a73374c5dc2ff4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e4cdff4236b09f09ac1f05150f96534') in 0.015019 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/MagicaCloth/Example (Can be deleted)/Scene
-  artifactKey: Guid(6b0e73501d5735144880767c4f290cc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MagicaCloth/Example (Can be deleted)/Scene using Guid(6b0e73501d5735144880767c4f290cc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b7c58dfa8f35d1834d739aae73cd93d') in 0.006018 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.380151 seconds.
-  path: Assets/MagicaCloth/Example (Can be deleted)/Scene/DressUpSample.unity
-  artifactKey: Guid(0f883390cd37b764c98af83169906528) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MagicaCloth/Example (Can be deleted)/Scene/DressUpSample.unity using Guid(0f883390cd37b764c98af83169906528) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7747f2c14323c62da8bfd6f0c39b306') in 0.014236 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.897898 seconds.
-  path: Assets/MagicaCloth/Example (Can be deleted)/Scene/FlipSample.unity
-  artifactKey: Guid(98283689b521e4b4fba94c8a81b36d06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MagicaCloth/Example (Can be deleted)/Scene/FlipSample.unity using Guid(98283689b521e4b4fba94c8a81b36d06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60163ec10f848e5a683ddc790554d23d') in 0.005696 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.103031 seconds.
-  path: Assets/MagicaCloth/Example (Can be deleted)/Scene/MeshClothSample.unity
-  artifactKey: Guid(475f3d827812e9a47a7a02d03d687ef6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MagicaCloth/Example (Can be deleted)/Scene/MeshClothSample.unity using Guid(475f3d827812e9a47a7a02d03d687ef6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01f73516ca9188faa27e08ba9000a28d') in 0.005632 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.615846 seconds.
-  path: Assets/MagicaCloth/Example (Can be deleted)/Scene/MeshSpringSample.unity
-  artifactKey: Guid(9d0bb4ba655de46418a38fa7d02604d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MagicaCloth/Example (Can be deleted)/Scene/MeshSpringSample.unity using Guid(9d0bb4ba655de46418a38fa7d02604d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a1b4cb7ccc6d80265347142e343447a') in 0.006239 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.011073 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\3d\Incompatible Duality\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\3d\Incompatible Duality\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.45 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.282 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1283ms)
-		BeginReloadAssembly (154ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (41ms)
-		EndReloadAssembly (1028ms)
-			LoadAssemblies (118ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (315ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (66ms)
-			SetupLoadedEditorAssemblies (498ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (10ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (105ms)
-				ProcessInitializeOnLoadAttributes (289ms)
-				ProcessInitializeOnLoadMethodAttributes (88ms)
-				AfterProcessingInitializeOnLoad (3ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.44 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 6922 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 47 unused Assets / (1.5 MB). Loaded Objects now: 7569.
-Memory consumption went from 278.3 MB to 276.8 MB.
-Total: 4.783200 ms (FindLiveObjects: 0.611400 ms CreateObjectMapping: 0.224400 ms MarkObjects: 3.403000 ms  DeleteObjects: 0.543200 ms)
+  Time since last request: 193141.210062 seconds.
+  path: Assets/Characters/Honmori_Yakida/Meshes/Honmori_Yakida.fbx
+  artifactKey: Guid(0f087a5f78754734aa7f8d0c32798866) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Honmori_Yakida/Meshes/Honmori_Yakida.fbx using Guid(0f087a5f78754734aa7f8d0c32798866) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Attempting to get Camera relative temporary RenderTexture (width || height <= 0) via a CommandBuffer  in a Sriptable Render Pipeline.
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Rendering.ScriptableRenderContext:ExecuteCommandBuffer_Internal (UnityEngine.Rendering.CommandBuffer)
+UnityEngine.Rendering.ScriptableRenderContext:ExecuteCommandBuffer (UnityEngine.Rendering.CommandBuffer)
+UnityEngine.Rendering.Universal.Internal.CopyColorPass:Execute (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.RenderingData&) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.4/Runtime/Passes/CopyColorPass.cs:111)
+UnityEngine.Rendering.Universal.ScriptableRenderer:ExecuteRenderPass (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.ScriptableRenderPass,UnityEngine.Rendering.Universal.RenderingData&) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.4/Runtime/ScriptableRenderer.cs:966)
+UnityEngine.Rendering.Universal.ScriptableRenderer:ExecuteBlock (int,UnityEngine.Rendering.Universal.ScriptableRenderer/RenderBlocks&,UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.RenderingData&,bool) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.4/Runtime/ScriptableRenderer.cs:925)
+UnityEngine.Rendering.Universal.ScriptableRenderer:Execute (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.RenderingData&) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.4/Runtime/ScriptableRenderer.cs:729)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.CameraData,bool) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.4/Runtime/UniversalRenderPipeline.cs:414)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Camera) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.4/Runtime/UniversalRenderPipeline.cs:323)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:Render (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.4/Runtime/UniversalRenderPipeline.cs:278)
+UnityEngine.Rendering.RenderPipeline:InternalRender (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal (UnityEngine.Rendering.RenderPipelineAsset,intptr,System.Collections.Generic.List`1<UnityEngine.Camera/RenderRequest>,Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle)
+UnityEditor.PreviewRenderUtility:Render (bool,bool)
+UnityEditor.GameObjectInspector:DoRenderPreview ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+[ line 0]
+
+Trying to get RenderBuffer with invalid antiAliasing (must be at least 1)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit_Internal ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit ()
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.CameraData,bool) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.4/Runtime/UniversalRenderPipeline.cs:430)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Camera) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.4/Runtime/UniversalRenderPipeline.cs:323)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:Render (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.4/Runtime/UniversalRenderPipeline.cs:278)
+UnityEngine.Rendering.RenderPipeline:InternalRender (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal (UnityEngine.Rendering.RenderPipelineAsset,intptr,System.Collections.Generic.List`1<UnityEngine.Camera/RenderRequest>,Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle)
+UnityEditor.PreviewRenderUtility:Render (bool,bool)
+UnityEditor.GameObjectInspector:DoRenderPreview ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Runtime\Graphics\RenderBufferManager.cpp line 180]
+
+Trying to get RenderBuffer with invalid antiAliasing (must be at least 1)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit_Internal ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit ()
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.CameraData,bool) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.4/Runtime/UniversalRenderPipeline.cs:430)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Camera) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.4/Runtime/UniversalRenderPipeline.cs:323)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:Render (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.4/Runtime/UniversalRenderPipeline.cs:278)
+UnityEngine.Rendering.RenderPipeline:InternalRender (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal (UnityEngine.Rendering.RenderPipelineAsset,intptr,System.Collections.Generic.List`1<UnityEngine.Camera/RenderRequest>,Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle)
+UnityEditor.PreviewRenderUtility:Render (bool,bool)
+UnityEditor.GameObjectInspector:DoRenderPreview ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Runtime\Graphics\RenderBufferManager.cpp line 180]
+
+ -> (artifact id: 'a0b2d0d3f6fd76697c56c1fda7f766b9') in 1.023117 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 241.938876 seconds.
-  path: Assets/MagicaCloth/Example (Can be deleted)/Material/Floor.mat
-  artifactKey: Guid(4211f17f5c190d849835987146a24053) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MagicaCloth/Example (Can be deleted)/Material/Floor.mat using Guid(4211f17f5c190d849835987146a24053) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '392b12c6a0f45ce368abe04ae7415748') in 0.263090 seconds 
+  Time since last request: 6.404029 seconds.
+  path: Assets/Characters/Honmori_Yakida
+  artifactKey: Guid(044dcd33a68c2114fb9c0b38b8e771d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Honmori_Yakida using Guid(044dcd33a68c2114fb9c0b38b8e771d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92d35d681eede7b9c150fa8c89b36376') in 0.002085 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.469600 seconds.
-  path: Assets/MagicaCloth/Example (Can be deleted)/UnityChan/Animators/UnityChanAction.controller
-  artifactKey: Guid(8f427a9fc1390d44f9d2895379247847) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MagicaCloth/Example (Can be deleted)/UnityChan/Animators/UnityChanAction.controller using Guid(8f427a9fc1390d44f9d2895379247847) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21e0d93c58117ec3fdab7abd5cfc3f41') in 0.081894 seconds 
+  Time since last request: 22.465702 seconds.
+  path: Assets/Characters/Honmori_Yakida/HY_Main_Mat.mat
+  artifactKey: Guid(635ea655f26506a428dab6c8e2007b23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Honmori_Yakida/HY_Main_Mat.mat using Guid(635ea655f26506a428dab6c8e2007b23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df53110969cb4997a45034c0f0dfbe07') in 0.071461 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 21.867439 seconds.
-  path: Assets/MagicaCloth/Example (Can be deleted)/Prefabs/BlastWave.prefab
-  artifactKey: Guid(78e288254dbe5b041b283a3ae422e4b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MagicaCloth/Example (Can be deleted)/Prefabs/BlastWave.prefab using Guid(78e288254dbe5b041b283a3ae422e4b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28f9c34c143821f357a355f9c083fe77') in 0.027245 seconds 
+  Time since last request: 37.987161 seconds.
+  path: Assets/Characters/Honmori_Yakida/HY_Main.tga
+  artifactKey: Guid(e1c08bf366eba604a9f6640d5d5f95f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Honmori_Yakida/HY_Main.tga using Guid(e1c08bf366eba604a9f6640d5d5f95f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b29c4c3b2c4e596ce259a0840da5e86') in 0.064054 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/MagicaCloth/Example (Can be deleted)/Prefabs/unitychan.prefab
-  artifactKey: Guid(0605ba91155172f4cbb3c1d7a92aa012) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MagicaCloth/Example (Can be deleted)/Prefabs/unitychan.prefab using Guid(0605ba91155172f4cbb3c1d7a92aa012) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65abaff8a625dcec6e2f4e7c16143627') in 0.153601 seconds 
+  Time since last request: 16.278448 seconds.
+  path: Assets/Characters/Honmori_Yakida/Meshes/Honmori_Yakida.fbx
+  artifactKey: Guid(0f087a5f78754734aa7f8d0c32798866) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Honmori_Yakida/Meshes/Honmori_Yakida.fbx using Guid(0f087a5f78754734aa7f8d0c32798866) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a1cc02cbc9187b86d578eae0ce4b0b8') in 0.359667 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 24.629678 seconds.
-  path: Assets/UTS3DemoScenes/UnityChan/SD/Models/SD_unitychan_humanoid.fbx
-  artifactKey: Guid(7d482c82ffb74a7fbfc5c7b288095351) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UTS3DemoScenes/UnityChan/SD/Models/SD_unitychan_humanoid.fbx using Guid(7d482c82ffb74a7fbfc5c7b288095351) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a241144d2a9b38cdac920ca735a19353') in 0.282730 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/UTS3DemoScenes/UnityChan/SD/Prefabs/SD_unitychan_humanoid_CelLook_Firefly.prefab
-  artifactKey: Guid(6a255c64d9b44702b35763a88d5d2dc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UTS3DemoScenes/UnityChan/SD/Prefabs/SD_unitychan_humanoid_CelLook_Firefly.prefab using Guid(6a255c64d9b44702b35763a88d5d2dc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4d7ebc87d94ac1df58ffd313209320a') in 5.267716 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/UTS3DemoScenes/UnityChan/SD/unitychan_tile3(LWRP).mat
-  artifactKey: Guid(202860d7c89e422c8a57a614df4b5505) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UTS3DemoScenes/UnityChan/SD/unitychan_tile3(LWRP).mat using Guid(202860d7c89e422c8a57a614df4b5505) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8e454967b8eeda2cfcdcf12a742eada') in 0.016686 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/MagicaCloth/Example (Can be deleted)/UnityChan/Animations/unitychan_WAIT02.fbx
-  artifactKey: Guid(0becf789f04628b439db1848e4f88a44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MagicaCloth/Example (Can be deleted)/UnityChan/Animations/unitychan_WAIT02.fbx using Guid(0becf789f04628b439db1848e4f88a44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd500369480e00e4d8152d53027dbfaf') in 0.098368 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/MagicaCloth/Example (Can be deleted)/UnityChan/Model/unitychanMC.fbx
-  artifactKey: Guid(44a47761193d803478b1069b52645125) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MagicaCloth/Example (Can be deleted)/UnityChan/Model/unitychanMC.fbx using Guid(44a47761193d803478b1069b52645125) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d1e56898a5bd2c5f9b32e486660adf1') in 0.339066 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/MagicaCloth/Example (Can be deleted)/UnityChan/Animations/unitychan_WAIT01.fbx
-  artifactKey: Guid(4852ef4b1d1269c4d8361abfae9caeb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MagicaCloth/Example (Can be deleted)/UnityChan/Animations/unitychan_WAIT01.fbx using Guid(4852ef4b1d1269c4d8361abfae9caeb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4af4716d7d7a19be85a0664e75717d78') in 0.082728 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/MagicaCloth/Example (Can be deleted)/UnityChan/Animations/unitychan_WAIT04.fbx
-  artifactKey: Guid(81f05acfd1f3881498994fb7de0d637f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MagicaCloth/Example (Can be deleted)/UnityChan/Animations/unitychan_WAIT04.fbx using Guid(81f05acfd1f3881498994fb7de0d637f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60e5b88746ae4e364b0d2df504548957') in 0.086534 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Mirror/Editor/Weaver/Unity.Mirror.CodeGen.asmdef
-  artifactKey: Guid(1d0b9d21c3ff546a4aa32399dfd33474) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Mirror/Editor/Weaver/Unity.Mirror.CodeGen.asmdef using Guid(1d0b9d21c3ff546a4aa32399dfd33474) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37e2570ad410383c3d73db3440cf6704') in 0.007990 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Assets/MagicaCloth/Example (Can be deleted)/UnityChan/Model/Stage/unitychan_tile5.mat
-  artifactKey: Guid(373b04eb7b0709b40adeb4c1cdc0da8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MagicaCloth/Example (Can be deleted)/UnityChan/Model/Stage/unitychan_tile5.mat using Guid(373b04eb7b0709b40adeb4c1cdc0da8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a0f821ff3e03d82d1be0dfe8064bc8f') in 0.014487 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/MagicaCloth/Example (Can be deleted)/UnityChan/Animations/unitychan_RUN00_F.fbx
-  artifactKey: Guid(8bb746865013ee844926bf91703f6aa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MagicaCloth/Example (Can be deleted)/UnityChan/Animations/unitychan_RUN00_F.fbx using Guid(8bb746865013ee844926bf91703f6aa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06fd82cedf500ddc8d160ea37310bb8d') in 0.080622 seconds 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+  Time since last request: 171.350032 seconds.
+  path: Assets/Characters/Mage/Prefabs/Haraki_Kazuhashi_FBX.prefab
+  artifactKey: Guid(a4baea2a1daab1b428f511263a9b20c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Mage/Prefabs/Haraki_Kazuhashi_FBX.prefab using Guid(a4baea2a1daab1b428f511263a9b20c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0939e0566b8d737ef269362cf5a78daa') in 1.795243 seconds 

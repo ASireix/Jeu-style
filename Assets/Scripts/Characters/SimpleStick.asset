@@ -17,5 +17,5 @@ MonoBehaviour:
   Health: 100
   Damage_Reduction_Percentage: 0
   Energy: 100
-  EnergyRegenSpeed: 15
+  EnergyRegenSpeed: 5
   Speed: 6

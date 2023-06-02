@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91e9ccad9fa757d43aa5dbd334461616, type: 3}
+  m_Name: HK Radian Light
+  m_EditorClassIdentifier: 
+  activeClip: {fileID: 0}
+  recoveryClip: {fileID: 0}
+  startClip: {fileID: 0}
+  requiredEnergy: 0
+  damage: 0
+  name: Radian Light
+  cooldDownTime: 2.39
+  activeTime: 1.13
+  triggerAnimName: AbilityThree
+  newProjSpeed: 50
+  deleteTimer: 10
+  detectionRange: 7
+  newSize: 10
+  particlePrefab: {fileID: 5343413285101061014, guid: 0ffaaaebc4da6bf44bc64875495210fd, type: 3}
+  spawnPos: {x: 0.15, y: 1.685, z: 0.373}

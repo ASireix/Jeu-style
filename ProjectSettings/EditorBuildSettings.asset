@@ -8,16 +8,22 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: c9f72b598f9f4594fa219e5049a23a15
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/NetworkScene.unity
     guid: fc80ab885c3715647ba722f51e9a6eda
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LobbyScene.unity
     guid: 958c2976900176740a88c105bc3668ea
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Temp.unity
     guid: f2e508f245842db4f931f5e61fb6fe6c
+  - enabled: 1
+    path: Assets/Scenes/PrisonLevel.unity
+    guid: 6d446b36e5268414894713872e0cda0f
+  - enabled: 1
+    path: Assets/Scenes/CharacterSelect.unity
+    guid: 06d8382d7b67fb441b4bf59aa393d3e3
   m_configObjects: {}

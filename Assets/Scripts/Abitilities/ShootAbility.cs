@@ -7,12 +7,12 @@ public class ShootAbility : Ability
 {
     
     public GameObject bulletPrefab;
-    public override void Activate(PlayerController player)
+    public override void ActivateAbility(PlayerController player, PlayerState pState)
     {
         if (!player.anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot") && requiredEnergy<=player.currentEnergy)
         {
-            base.Activate(player);
-            player.anim.SetTrigger("Shoot");
+            base.Activate(player,pState);
+            player.anim.SetTrigger(triggerAnimName);
             int r = Random.Range(0, 2);
             player.anim.SetFloat("ShootingAnim", r);
             player.AnimationFunctionToCall = ShootBullet;

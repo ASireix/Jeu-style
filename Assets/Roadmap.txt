@@ -1,0 +1,17 @@
+- Menu principal
+- Menu de sélection du personnage
+- Menu option
+- Fin d'une partie
+- Terminer effet de HK
+- Texture update de HK
+- Texture du niveau prison
+- Terminer dégat laser de HK
+- Intro d'une partie
+- Jauge d'ultime effet visuel
+- Modèle du totem d'ultime
+- Effets sonores
+1.0
+
+
+
+

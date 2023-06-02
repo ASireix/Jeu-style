@@ -13,13 +13,13 @@ public class InversionAbility : Ability
     public float sSpeed;
 
 
-    public override void Activate(PlayerController player)
+    public override void ActivateAbility(PlayerController player, PlayerState pState)
     {
         
 
         if (requiredEnergy <= player.currentEnergy && player.anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") || player.anim.GetCurrentAnimatorStateInfo(0).IsName("Move"))
         {
-            base.Activate(player);
+            base.Activate(player,pState);
             player.anim.SetTrigger(triggerAnimName);
             player.AnimationFunctionToCall = SpawnForceField;
         }

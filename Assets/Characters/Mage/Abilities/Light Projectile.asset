@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88810f7a454e94349ae29b58dde5ac9f, type: 3}
+  m_Name: Light Projectile
+  m_EditorClassIdentifier: 
+  activeClip: {fileID: 0}
+  recoveryClip: {fileID: 0}
+  startClip: {fileID: 0}
+  requiredEnergy: 20
+  damage: 10
+  name: Light
+  cooldDownTime: 1
+  activeTime: 0
+  triggerAnimName: Shoot
+  bulletPrefab: {fileID: 130198310447507040, guid: 1d37c6f1f79f6004f87b722af815d1ab, type: 3}

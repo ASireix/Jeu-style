@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2022be797c8d16042b919dc335cbdfc5, type: 3}
+  m_Name: Black Vert
+  m_EditorClassIdentifier: 
+  paletteName: Simple
+  bodyColor: {r: 0.85882354, g: 0.85882354, b: 0.85882354, a: 0}
+  bodyColorShadow: {r: 0.80784315, g: 0.6039216, b: 0.4509804, a: 0}
+  coatColor: {r: 0.20784314, g: 0.54901963, b: 0.10980392, a: 0}
+  coatColorShadow: {r: 0.11764706, g: 0.22745098, b: 0.08627451, a: 0}
+  projectileColorLight: {r: 1, g: 0.5970881, b: 0, a: 0}
+  projectileColorMain: {r: 0.11723979, g: 7.620586, b: 0, a: 0}
+  projectileColorTrail: {r: 0.32394564, g: 1.8019476, b: 0, a: 0}
+  mainBeamColor: {r: 0.30532908, g: 1, b: 0, a: 0}
+  particleBeamColor: {r: 2.573314, g: 10.603828, b: 0, a: 1}

@@ -16,9 +16,13 @@ public class UIManager : MonoBehaviour
 
             item.energyChangeEvent.AddListener(UpdateEnergy);
 
+            item.cdProjChangeEvent.AddListener(UpdateCDProj);
+
             item.cdOneChangeEvent.AddListener(UpdateCDOne);
 
             item.cdTwoChangeEvent.AddListener(UpdateCDTwo);
+
+            item.cdThreeChangeEvent.AddListener(UpdateCDThree);
 
             item.healthChangeEvent.AddListener(UpdateHealth);
         }
@@ -26,8 +30,12 @@ public class UIManager : MonoBehaviour
 
     void UpdateEnergy(PlayerUI ui, float amount)
     {
-        Debug.Log("marche");
         ui.energy.fillAmount = amount;
+    }
+
+    void UpdateCDProj(PlayerUI ui, float amount)
+    {
+        ui.projectile.fillAmount = amount;
     }
 
     void UpdateCDOne(PlayerUI ui, float amount)
@@ -38,6 +46,11 @@ public class UIManager : MonoBehaviour
     void UpdateCDTwo(PlayerUI ui, float amount)
     {
         ui.abilityTwo.fillAmount = amount;
+    }
+
+    void UpdateCDThree(PlayerUI ui, float amount)
+    {
+        ui.abilityThree.fillAmount = amount;
     }
 
     void UpdateHealth(PlayerUI ui, float amount)

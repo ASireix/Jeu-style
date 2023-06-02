@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10d2498415e02514e948b5694e1fcbf3, type: 3}
+  m_Name: HK Beam
+  m_EditorClassIdentifier: 
+  activeClip: {fileID: 0}
+  recoveryClip: {fileID: 0}
+  startClip: {fileID: 0}
+  requiredEnergy: 80
+  damage: 350
+  name: Big beam
+  cooldDownTime: 20
+  activeTime: 0
+  triggerAnimName: AbilityTwo
+  spawnPos: {x: 0.1009998, y: 1.283262, z: 0.995}
+  beamPrefab: {fileID: 2259159669607319645, guid: f0f67e219c023714e98d3aa16cb1367f, type: 3}
+  beamDuration: 5

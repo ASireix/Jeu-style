@@ -45,7 +45,7 @@ public class ForceField : MonoBehaviour
     {
         if (other.gameObject.tag == "Bullet")
         {
-            other.GetComponent<Bullet>().InvertColor();
+            //other.GetComponent<Bullet>().InvertColor();
         }
     }
 }

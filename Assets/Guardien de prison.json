@@ -1,0 +1,100 @@
+Personnage
+
+Nom : pas encore définie
+Description : le guardien de la prison qui aurait voulu être boulanger. Il utilise une magie qui lui permet de faire le meilleur pain à partir de rien
+
+PV : 3/5
+MP : 5/5
+
+Vitesse : 3/5
+
+-----------------------------------
+
+Projectiles
+
+Description (patern ou effet):
+
+Dégat : 4/5
+Vitesse : 4/5
+MP: 5/5
+Armor : 1
+
+Des grosses boule de feu qui rebondissent sur le sol comme une balle
+
+Status : (ça peut être n'importe quoi, genre brulant ou electrifié')
+
+-----------------------------------
+
+Compétence 1 : Tous dans le train
+
+Description (patern ou effet): Un large coup de faux vers l'avant. Applique Mature aux ennemis touchés si un autre objet touché est déjà Mature
+
+Dégat : 2/5
+Vitesse : 1/5
+MP: 3/5
+CD : 2/5
+
+Vitesse d'animation : - Startup :
+					  - Active :
+					  - Recovery :
+
+Status : (ça peut être n'importe quoi, genre brulant ou electrifié')
+
+-----------------------------------
+
+Compétence 2 : La gestapo
+
+Description (patern ou effet): 3 projectiles qui ont une trajectoire ondulée. Applique Mature à tout projectiles alliés ou personnages ennemis touchés
+
+Dégat : 0/5
+Vitesse : 1/5
+MP: 5/5
+CD : 4/5
+
+Vitesse d'animation : - Startup :
+					  - Active :
+					  - Recovery :
+
+Status : Mature : pas d'effets spécial sur le personnage mais synergise avec "A mort les juifs". Se retire après X secondes
+
+-----------------------------------
+
+Compétence 3 : A mort les juifs
+
+Description (patern ou effet): Place un petit four en forme de cage à oiseau dans les air. Il peut y avoir au maximum 2 cages
+Si un ennemi "Mature" se trouve dans un rayon autour du four il est aspiré violemment vers le four, subis des dégats moyens et est guéri du statut "Mature"
+Les fours ne disparaissent pas mais devienne inactif pendant X secondes une fois activés
+
+Dégat : 2/5
+Vitesse : 4/5
+MP: 2/5
+CD : 1/5
+
+Vitesse d'animation : - Startup :
+					  - Active :
+					  - Recovery :
+
+Status : (ça peut être n'importe quoi, genre brulant ou electrifié')
+
+-----------------------------------
+
+Ultime
+
+Description (patern ou effet):
+
+Passif :
+
+Status : (ça peut être n'importe quoi, genre brulant ou electrifié')
+
+-----------------------------------
+
+Status
+
+Description détaillée des status utilisé :
+
+-----------------------------------
+
+Plan de jeu :
+(Exemple : son utlime est très fort donc le reste des compétence est équilibré de tel sorte)
+
+
